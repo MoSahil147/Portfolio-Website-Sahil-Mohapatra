@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: none; /* Hide default cursor */
+    cursor: none;
 }
 
 /* Navigation Bar */
@@ -45,7 +45,6 @@ nav a:hover {
     margin: 2rem 0;
 }
 
-/* Video Section */
 .video-container {
     width: 100%;
     height: 500px;
@@ -56,6 +55,70 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* About Me Section */
+.about-me {
+    background-color: #000; /* Fully black background */
+    color: #ffe300;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.about-me h1 {
+    font-size: 2rem; /* About Me heading size */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 3rem; /* Space below heading */
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem; /* Space between elements */
+    margin: 0 auto;
+    width: 80%;
+}
+
+.image-container {
+    width: 300px; /* Image size */
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #FFD700;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-content p {
+    font-size: 1.5rem; /* Uniform font size */
+    line-height: 1.8;
+    text-align: center;
+    color: #ffe300; /* Default color for text */
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Highlighted and Styled Parts */
+.highlight {
+    color: #FFD700; /* Yellow highlight */
+    font-weight: bold;
+}
+
+.white-text {
+    color: #ffffff; /* White text */
+    font-weight: bold;
+}
+
+.heart {
+    color: #FF0000; /* Red heart */
 }
 
 /* Footer Section */
@@ -81,9 +144,9 @@ footer p {
     left: 0;
     width: 20px;
     height: 20px;
-    background-color: rgba(255, 227, 0, 0.7); /* Yellow glow */
+    background-color: rgba(255, 227, 0, 0.7);
     border-radius: 50%;
-    pointer-events: none; /* Prevent interference */
+    pointer-events: none;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 15px rgba(255, 227, 0, 0.7);
     transition: transform 0.1s ease, background-color 0.3s ease;

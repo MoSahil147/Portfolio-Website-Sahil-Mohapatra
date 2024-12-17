@@ -30,7 +30,6 @@ document.addEventListener('mousemove', (e) => {
     const x = e.clientX;
     const y = e.clientY;
 
-    // Move the cursor to follow the mouse
     cursor.style.left = `${x}px`;
     cursor.style.top = `${y}px`;
 });
@@ -39,10 +38,10 @@ document.addEventListener('mousemove', (e) => {
 document.querySelectorAll('nav a, button').forEach(element => {
     element.addEventListener('mouseenter', () => {
         cursor.style.transform = 'scale(2)';
-        cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)'; /* Red on hover */
+        cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
     });
     element.addEventListener('mouseleave', () => {
         cursor.style.transform = 'scale(1)';
-        cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)'; /* Default color */
+        cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)';
     });
 });
