@@ -19,7 +19,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 1rem 0;
+    padding: 2rem 0; /* Increased gap above video */
     font-size: 1.2rem;
     font-weight: bold;
     background-color: #000;
@@ -40,106 +40,27 @@ nav a:hover {
 
 /* Main Content Section */
 .main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem auto;
-    width: 90%;
-    height: 500px;
+    width: 100%;
+    margin: 2rem 0; /* Equal gap above and below the video */
 }
 
 /* Video Section */
 .video-container {
-    width: 70%;
-    height: 100%;
+    width: 100%; /* Full-width video */
+    height: 500px; /* Adjusted height */
     overflow: hidden;
 }
 
 .video-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-/* Animation Section */
-.animation-container {
-    width: 25%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.memoji-base {
-    width: 150px;
-    height: auto;
-    position: absolute;
-    z-index: 1;
-}
-
-/* Face Container */
-.face-container {
-    width: 150px;
-    height: 200px;
-    position: absolute;
-    z-index: 2;
-}
-
-/* Eyes */
-.eye {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
-    top: 47%;
-}
-
-.left-eye {
-    left: 33%;
-}
-
-.right-eye {
-    right: 33%;
-}
-
-/* Eyebrows */
-.eyebrow {
-    position: absolute;
-    width: 50px;
-    height: 10px;
-    background-color: #442a19;
-    border-radius: 5px;
-    top: 30%;
-    transition: transform 0.2s ease;
-}
-
-.left-brow {
-    left: 28%;
-}
-
-.right-brow {
-    right: 28%;
-}
-
-/* Mouth */
-.mouth {
-    position: absolute;
-    width: 80px;
-    height: 40px;
-    background-color: red;
-    border-radius: 0 0 50px 50px;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: transform 0.2s ease;
+    object-fit: cover; /* Ensures video fills the container */
 }
 
 /* Footer Section */
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 0; /* Increased gap below video */
     font-weight: bold;
 }
 
@@ -150,10 +71,4 @@ footer h1 {
 footer p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
-}
-
-/* Eye Blinking Animation */
-@keyframes blink {
-    0%, 100% { height: 30px; }
-    50% { height: 5px; }
 }
