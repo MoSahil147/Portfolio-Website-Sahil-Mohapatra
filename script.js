@@ -35,13 +35,23 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Hover effect for interactive elements
-document.querySelectorAll('nav a, button').forEach(element => {
+document.querySelectorAll('nav a, button, .project-card').forEach(element => {
     element.addEventListener('mouseenter', () => {
         cursor.style.transform = 'scale(2)';
-        cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+        cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)'; // Red on hover
     });
     element.addEventListener('mouseleave', () => {
         cursor.style.transform = 'scale(1)';
-        cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)';
+        cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)'; // Yellow default color
+    });
+});
+
+// Project Cards Click Event
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const link = card.getAttribute('data-link'); // Get URL from data attribute
+        if (link) {
+            window.open(link, '_blank'); // Open link in new tab
+        }
     });
 });
