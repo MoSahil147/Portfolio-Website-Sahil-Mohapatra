@@ -59,17 +59,17 @@ nav a:hover {
 
 /* About Me Section */
 .about-me {
-    background-color: #000; /* Fully black background */
+    background-color: #000;
     color: #ffe300;
     padding: 5rem 0;
     text-align: center;
 }
 
 .about-me h1 {
-    font-size: 2rem; /* About Me heading size */
+    font-size: 2rem; /* Reduced from 2.5rem */
     font-weight: bold;
     color: #FFD700;
-    margin-bottom: 3rem; /* Space below heading */
+    margin-bottom: 2rem; /* Adjusted spacing */
 }
 
 .about-container {
@@ -77,13 +77,13 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem; /* Space between elements */
+    gap: 2.5rem;
     margin: 0 auto;
     width: 80%;
 }
 
 .image-container {
-    width: 300px; /* Image size */
+    width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
@@ -97,28 +97,27 @@ nav a:hover {
 }
 
 .about-content p {
-    font-size: 1.5rem; /* Uniform font size */
+    font-size: 1.5rem;
     line-height: 1.8;
     text-align: center;
-    color: #ffe300; /* Default color for text */
+    color: #ffe300;
     max-width: 900px;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Highlighted and Styled Parts */
 .highlight {
-    color: #FFD700; /* Yellow highlight */
+    color: #FFD700;
     font-weight: bold;
 }
 
 .white-text {
-    color: #ffffff; /* White text */
+    color: #ffffff;
     font-weight: bold;
 }
 
 .heart {
-    color: #FF0000; /* Red heart */
+    color: #FF0000;
 }
 
 /* Projects Section */
@@ -130,55 +129,61 @@ nav a:hover {
 }
 
 .projects .section-title {
-    font-size: 2rem; /* Centered title size */
+    font-size: 2rem; /* Reduced from 2.5rem */
     font-weight: bold;
     color: #FFD700;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem; /* Adjusted spacing */
 }
 
+/* Project Container */
 .project-container {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Project Cards */
 .project-card {
-    background-color: #fff;
+    flex: 1 1 calc(30% - 2rem);
+    max-width: 400px;
+    min-width: 300px;
+    background-color: #FFD700;
     color: #000;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .project-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
 .project-card h2 {
     font-family: 'Public Sans', sans-serif;
     font-weight: bold;
-    font-size: 1.2rem;
-    margin: 1rem 0 0.5rem;
-    color: #000;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
 }
 
 .project-card p {
     font-family: 'TT Interphases', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0 1rem 1rem;
     text-align: justify;
-    color: #333;
 }
 
 .project-card:hover {
-    transform: translateY(-10px); /* Pop-up effect */
-    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6); /* Golden glow */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.7);
 }
 
 /* Footer Section */
@@ -197,6 +202,169 @@ footer p {
     margin-top: 0.5rem;
 }
 
+/* Experience Section */
+.experience {
+    background-color: #000;
+    color: #ffe300;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.experience .section-title {
+    font-size: 2rem; /* Reduced from 2.5rem */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 2rem; /* Adjusted spacing */
+}
+
+.experience-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Increased gap between items for better spacing */
+}
+
+.experience-item {
+    padding: 1rem 0;
+    text-align: left; /* Aligns content to the left */
+}
+
+.experience-title {
+    font-size: 1.5rem; /* Bold Title */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.experience-subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffe300;
+    margin-bottom: 0.5rem;
+}
+
+.experience-date {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ffe300;
+    margin-bottom: 1rem;
+}
+
+/* Experience Details (Bullet Points) */
+.experience-details {
+    list-style-type: disc;
+    margin-left: 2rem; /* Add left margin for bullets */
+    padding: 0;
+}
+
+.experience-details li {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Spacing between bullet points */
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+/* Education Section */
+.education {
+    background-color: #000; /* Matches other sections */
+    color: #ffe300;
+    padding: 3rem 2rem; /* Adjusted padding to move content upward */
+    text-align: center;
+}
+
+.education .section-title {
+    font-size: 2rem; /* Matches reduced font size */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 2rem; /* Equal spacing below the title */
+}
+
+.education-container {
+    max-width: 900px; /* Aligns content */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Equal spacing between education items */
+    text-align: left; /* Align text to the left */
+}
+
+.education-item {
+    padding: 1rem 0; /* Consistent padding for each item */
+}
+
+.education-title {
+    font-size: 1.5rem; /* Bold institution name */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 0.5rem; /* Slight spacing below title */
+}
+
+.education-subtitle {
+    font-size: 1.2rem; /* Smaller subtitle font */
+    font-weight: bold;
+    color: #ffffff; /* Changed to white */
+    margin-bottom: 0.5rem; /* Consistent spacing */
+}
+
+.education-date {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ffffff; /* Changed to white */
+}
+
+/* Skills Section */
+.skills {
+    background-color: #000; /* Matches other sections */
+    color: #ffe300;
+    padding: 4rem 2rem; /* Reduced padding to make the section more compact */
+    text-align: center;
+}
+
+.skills .section-title {
+    font-size: 2rem; /* Matches reduced title font size */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 1.5rem; /* Reduced spacing below the title */
+}
+
+.skills-container {
+    max-width: 900px; /* Aligns content */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Reduced space between skill items */
+    text-align: left; /* Align text to the left */
+}
+
+.skill-item {
+    padding: 0.5rem 0; /* Reduced padding for each skill */
+}
+
+.skill-title {
+    font-size: 1.4rem; /* Slightly smaller section title */
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 0.3rem; /* Reduced spacing below each skill title */
+}
+
+.highlight {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.skills ul {
+    list-style-type: disc; /* Add bullets for lists */
+    margin-left: 1.5rem; /* Reduced indentation for bullets */
+    padding: 0;
+}
+
+.skills li {
+    font-size: 1rem; /* Slightly smaller text for bullets */
+    line-height: 1.5; /* Reduced line height for compactness */
+    color: #ffffff; /* White text for bullets */
+}
+
 /* Cursor Animation */
 .cursor {
     position: fixed;
@@ -211,4 +379,15 @@ footer p {
     box-shadow: 0 0 15px rgba(255, 227, 0, 0.7);
     transition: transform 0.1s ease, background-color 0.3s ease;
     z-index: 1000;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%; /* Cards take full width on smaller screens */
+    }
+
+    .project-card img {
+        height: 200px;
+    }
 }
