@@ -316,8 +316,8 @@ footer p {
 /* Skills Section */
 .skills {
     background-color: #000; /* Matches other sections */
-    color: #ffe300;
-    padding: 4rem 2rem; /* Reduced padding to make the section more compact */
+    color: #ffffff; /* Default color for normal text */
+    padding: 4rem 2rem; /* Compact spacing */
     text-align: center;
 }
 
@@ -333,12 +333,12 @@ footer p {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Reduced space between skill items */
+    gap: 1.5rem; /* Compact space between skill items */
     text-align: left; /* Align text to the left */
 }
 
 .skill-item {
-    padding: 0.5rem 0; /* Reduced padding for each skill */
+    padding: 0.5rem 0; /* Compact padding for each skill */
 }
 
 .skill-title {
@@ -348,9 +348,17 @@ footer p {
     margin-bottom: 0.3rem; /* Reduced spacing below each skill title */
 }
 
+.normal-text {
+    color: #ffffff; /* White for normal text */
+}
+
 .highlight {
-    color: #FFD700;
-    font-weight: bold;
+    color: #FFD700; /* Yellow for highlighted/bold text */
+}
+
+.bold-text {
+    color: #ffffff; /* White for bold text */
+    font-weight: bold; /* Add bold styling */
 }
 
 .skills ul {
@@ -363,6 +371,117 @@ footer p {
     font-size: 1rem; /* Slightly smaller text for bullets */
     line-height: 1.5; /* Reduced line height for compactness */
     color: #ffffff; /* White text for bullets */
+}
+
+.normal-text {
+    color: #ffffff; /* White for normal text */
+}
+
+.highlight {
+    color: #FFD700; /* Yellow for highlighted/bold text */
+}
+
+.skills ul {
+    list-style-type: disc; /* Add bullets for lists */
+    margin-left: 1.5rem; /* Reduced indentation for bullets */
+    padding: 0;
+}
+
+.skills li {
+    font-size: 1rem; /* Slightly smaller text for bullets */
+    line-height: 1.5; /* Reduced line height for compactness */
+    color: #ffffff; /* White text for bullets */
+}
+
+/* Hobbies Section */
+.hobbies {
+    background-color: #000; /* Matches other sections */
+    color: #ffffff; /* Default text color */
+    padding: 4rem 2rem; /* Matches padding with other sections */
+    text-align: left; /* Aligns the section to the left */
+}
+
+.hobbies .section-title {
+    font-size: 2rem; /* Matches the title font size in other sections */
+    font-weight: bold;
+    color: #FFD700; /* Yellow color for the title */
+    margin-bottom: 2rem; /* Adds spacing below the title */
+    text-align: center; /* Keeps the section title centered */
+}
+
+.hobbies-container {
+    max-width: 900px; /* Aligns with other sections like Skills */
+    margin: 0 auto; /* Centers the container */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Spacing between hobby items */
+}
+
+.hobby-item {
+    padding: 0.5rem 0; /* Compact padding for each hobby */
+}
+
+.hobby-title {
+    font-size: 1.4rem; /* Matches subheading size in other sections */
+    font-weight: bold;
+    color: #FFD700; /* Yellow color for titles */
+    margin-bottom: 0.3rem; /* Adds spacing below the titles */
+}
+
+.normal-text {
+    color: #ffffff; /* White color for normal text */
+    font-weight: normal; /* Default weight for regular text */
+}
+
+/* Contact Information Section */
+.contact {
+    background-color: #000; /* Matches other sections */
+    color: #ffe300; /* Yellow text color */
+    padding: 4rem 2rem; /* Add spacing around the section */
+    text-align: center;
+}
+
+.contact .section-title {
+    font-size: 2rem; /* Matches other section titles */
+    font-weight: bold;
+    color: #FFD700; /* Yellow color for the title */
+    margin-bottom: 2rem; /* Adds spacing below the title */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons */
+    gap: 3rem; /* Adds more spacing between icons */
+    flex-wrap: wrap; /* Ensures icons wrap on smaller screens */
+}
+
+.contact-icons a {
+    text-decoration: none; /* Removes underline for links */
+}
+
+.contact-icons .icon {
+    width: 60px; /* Reduced size of icons */
+    height: 60px; /* Reduced size of icons */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 1rem; /* Adds space around each icon for better spacing */
+}
+
+.contact-icons .icon:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+    filter: brightness(1.3); /* Make icon brighter on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-icons {
+        flex-direction: column; /* Stack icons vertically on smaller screens */
+        gap: 2rem; /* Adjust spacing for smaller screens */
+    }
+
+    .contact-icons .icon {
+        width: 50px; /* Smaller size for icons on small screens */
+        height: 50px; /* Smaller size for icons on small screens */
+    }
 }
 
 /* Cursor Animation */
