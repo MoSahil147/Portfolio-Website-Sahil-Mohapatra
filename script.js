@@ -61,7 +61,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 // Smooth Scroll for Contact Information
-document.querySelector('nav a[href="#contact"]').addEventListener('click', function (e) {
+document.querySelector('nav a[href="#contact"]').addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
 });
