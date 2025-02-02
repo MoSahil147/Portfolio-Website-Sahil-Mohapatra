@@ -124,24 +124,24 @@ nav a:hover {
 .projects {
     background-color: #000;
     color: #ffe300;
-    padding: 5rem 0;
+    padding: 4rem 0; /* Reduced padding to bring the section up */
     text-align: center;
 }
 
 .projects .section-title {
-    font-size: 2rem; /* Reduced from 2.5rem */
+    font-size: 2rem;
     font-weight: bold;
     color: #FFD700;
-    margin-bottom: 2rem; /* Adjusted spacing */
+    margin-bottom: 3rem; /* Increased from 1.5rem to 3rem for more spacing */
 }
 
 /* Project Container */
 .project-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -149,7 +149,7 @@ nav a:hover {
 /* Project Cards */
 .project-card {
     flex: 1 1 calc(30% - 2rem);
-    max-width: 400px;
+    max-width: 350px;
     min-width: 300px;
     background-color: #FFD700;
     color: #000;
@@ -158,29 +158,47 @@ nav a:hover {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 420px; /* Reduced overall height */
 }
 
+/* Project Card Image */
 .project-card img {
     width: 100%;
-    height: 250px;
+    height: 230px; /* Slightly increased image height */
     object-fit: cover;
 }
 
-.project-card h2 {
-    font-family: 'Public Sans', sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: 1rem 0;
+/* Project Card Text Section */
+.project-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 1rem; /* Reduced padding to minimize yellow space */
     text-align: center;
 }
 
-.project-card p {
-    font-family: 'TT Interphases', sans-serif;
-    font-size: 1rem;
-    padding: 0 1rem 1rem;
-    text-align: justify;
+/* Project Card Title */
+.project-card h2 {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
 }
 
+/* Project Card Description */
+.project-card p {
+    font-family: 'TT Interphases', sans-serif;
+    font-size: 0.95rem; /* Slightly reduced text size */
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 0.3rem; /* Reduced padding inside */
+}
+
+/* Project Card Hover Effect */
 .project-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(255, 215, 0, 0.7);
