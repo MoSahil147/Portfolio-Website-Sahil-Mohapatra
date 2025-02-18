@@ -12,14 +12,16 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Smooth Scroll for Navigation Links
+// Smooth Scroll for Navigation Links with improved offset calculation
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
+      // Calculate the absolute top position of the target element and subtract the offset for the sticky navbar (80px)
+      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({
-        top: target.offsetTop - 80, // Adjust offset for sticky navbar
+        top: offsetTop,
         behavior: 'smooth'
       });
     }
@@ -33,14 +35,14 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.top = `${e.clientY}px`;
 });
 
-// Hover effect for interactive elements
+// Hover effect for interactive elements (nav links and project cards)
 document.querySelectorAll('nav a, .project-card').forEach(element => {
   element.addEventListener('mouseenter', () => {
     cursor.style.transform = 'scale(2)';
-    cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)'; // Red on hover
+    cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)'; // Change cursor color to red on hover
   });
   element.addEventListener('mouseleave', () => {
     cursor.style.transform = 'scale(1)';
-    cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)'; // Default yellow
+    cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)'; // Revert to default yellow
   });
 });
