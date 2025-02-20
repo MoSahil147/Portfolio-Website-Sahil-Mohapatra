@@ -12,13 +12,13 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Smooth Scroll for Navigation Links with improved offset calculation
+// Smooth Scroll for Navigation Links (with offset for the sticky navbar)
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      // Calculate the absolute top position of the target element and subtract the sticky navbar offset (80px)
+      // Calculate the top position of the target minus 80px for the navbar
       const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({
         top: offsetTop,
@@ -28,12 +28,11 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// Custom cursor initialization only for devices with a fine pointer (laptops/desktops)
-// If the device does not support a fine pointer, remove the cursor element
+// Enable custom cursor only on devices with a fine pointer (laptops/desktops)
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   const cursor = document.getElementById('cursor');
   
-  // Cursor movement
+  // Move the custom cursor on mouse movement
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
@@ -47,7 +46,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
     element.addEventListener('mouseleave', () => {
       cursor.style.transform = 'scale(1)';
-      cursor.style.backgroundColor = 'rgba(255,227,0,0.7)'; // Mustard color
+      cursor.style.backgroundColor = 'rgba(255,215,0,0.7)'; // Mustard yellow (FFD700) in RGBA
     });
   });
 } else {

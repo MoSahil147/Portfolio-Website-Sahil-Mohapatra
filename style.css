@@ -4,11 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Body & Global Styles */
 body {
   font-family: 'League Spartan', sans-serif;
   background-color: #000;
-  color: #ffe300; /* Mustard color */
-  cursor: none;
+  color: #FFD700; /* Darker yellow (Gold) for all main text */
+  cursor: none;  /* We'll use a custom cursor on desktop */
 }
 
 /* Navigation Bar */
@@ -27,7 +29,7 @@ nav {
 }
 nav a {
   text-decoration: none;
-  color: #ffe300;
+  color: #FFD700; /* Same darker yellow */
   font-size: 1.1rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -61,16 +63,18 @@ footer {
 }
 footer h1 {
   font-size: 2rem;
+  color: #FFD700;
 }
 footer p {
   font-size: 1.2rem;
   margin-top: 0.5rem;
+  color: #FFD700;
 }
 
 /* About Me Section */
 .about-me {
   background-color: #000;
-  color: #ffe300;
+  color: #FFD700;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -102,7 +106,7 @@ footer p {
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #ffe300;
+  color: #FFD700;
   max-width: 900px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
@@ -112,14 +116,14 @@ footer p {
   font-weight: bold;
 }
 .white-text {
-  color: #fff;
+  color: #FFD700; /* Unified to the same darker yellow */
   font-weight: bold;
 }
 
 /* Projects Section */
 .projects {
   background-color: #000;
-  color: #ffe300;
+  color: #FFD700;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -141,8 +145,8 @@ footer p {
   flex: 1 1 calc(30% - 2rem);
   max-width: 350px;
   min-width: 300px;
-  background-color: #FFD700;
-  color: #000;
+  background-color: #FFD700; /* Card background in gold */
+  color: #000;              /* Black text on gold background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   overflow: hidden;
@@ -174,7 +178,6 @@ footer p {
 .project-card p {
   font-family: 'TT Interphases', sans-serif;
   font-size: 0.95rem;
-  text-align: center;
   margin: 0 auto;
   padding: 0 0.3rem;
 }
@@ -186,7 +189,7 @@ footer p {
 /* Experience Section */
 .experience {
   background-color: #000;
-  color: #ffe300;
+  color: #FFD700;
   padding: 4rem 2rem;
 }
 .experience .section-title {
@@ -215,13 +218,13 @@ footer p {
 .experience-subtitle {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffe300;
+  color: #FFD700;
   margin-bottom: 0.5rem;
 }
 .experience-date {
   font-size: 1rem;
   font-style: italic;
-  color: #ffe300;
+  color: #FFD700;
   margin-bottom: 1rem;
 }
 .experience-details {
@@ -231,14 +234,14 @@ footer p {
 .experience-details li {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #fff;
+  color: #fff; /* White stands out on black for bullet text */
   margin-bottom: 1rem;
 }
 
 /* Education Section */
 .education {
   background-color: #000;
-  color: #ffe300;
+  color: #FFD700;
   padding: 3rem 2rem;
   text-align: center;
 }
@@ -268,7 +271,7 @@ footer p {
 .education-subtitle {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #fff;
+  color: #fff; /* White for subtitles to differentiate them slightly */
   margin-bottom: 0.5rem;
 }
 .education-date {
@@ -361,7 +364,7 @@ footer p {
 /* Contact Section */
 .contact {
   background-color: #000;
-  color: #ffe300;
+  color: #FFD700;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -397,16 +400,16 @@ footer p {
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: rgba(255,227,0,0.7); /* Mustard color in RGBA */
+  background-color: rgba(255,215,0,0.7); /* #FFD700 in RGBA */
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 15px rgba(255,227,0,0.7);
+  box-shadow: 0 0 15px rgba(255,215,0,0.7);
   transition: transform 0.1s ease, background-color 0.3s ease;
   z-index: 1000;
 }
 
-/* Hide custom cursor on devices with coarse pointers (phones/tablets) */
+/* Remove custom cursor on coarse pointers (phones/tablets) */
 @media (hover: none) and (pointer: coarse) {
   .cursor {
     display: none;
