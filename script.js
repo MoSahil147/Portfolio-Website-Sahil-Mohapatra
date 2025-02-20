@@ -12,13 +12,14 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Smooth Scroll for Navigation Links (with offset for the sticky navbar)
+// Smooth Scroll for Navigation Links (with offset for sticky navbar)
+// The polyfill in index.html ensures this works on older mobile browsers
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      // Calculate the top position of the target minus 80px for the navbar
+      // Calculate the top position of target minus 80px for navbar
       const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({
         top: offsetTop,
@@ -28,11 +29,11 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// Enable custom cursor only on devices with a fine pointer (laptops/desktops)
+// Enable custom cursor only on devices with a fine pointer
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   const cursor = document.getElementById('cursor');
   
-  // Move the custom cursor on mouse movement
+  // Move cursor on mousemove
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
@@ -46,13 +47,13 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
     element.addEventListener('mouseleave', () => {
       cursor.style.transform = 'scale(1)';
-      cursor.style.backgroundColor = 'rgba(255,215,0,0.7)'; // Mustard yellow (FFD700) in RGBA
+      cursor.style.backgroundColor = 'rgba(255,215,0,0.7)'; // Return to #FFD700 (Gold) shade
     });
   });
 } else {
-  // Remove the cursor element for devices with coarse pointers (phones/tablets)
+  // Remove the cursor element if device uses a coarse pointer (phone/tablet)
   const cursorElem = document.getElementById('cursor');
   if (cursorElem) {
-    cursorElem.parentNode.removeChild(cursorElem);
+    cursorElem.remove();
   }
 }

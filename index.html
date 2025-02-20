@@ -4,9 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sahil Mohapatra - Portfolio</title>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600|Public+Sans:400,700|TT+Interphases:400,600" rel="stylesheet">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Smooth Scroll Polyfill (ensures smooth scrolling on older mobile browsers) -->
+  <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+  <script>
+    // Initialize the polyfill so all browsers support smooth scrolling
+    smoothscroll.polyfill();
+  </script>
 </head>
 <body>
   <!-- Navigation Section -->
@@ -250,7 +260,7 @@
   <!-- Cursor (only on fine pointer devices) -->
   <div class="cursor" id="cursor"></div>
 
-  <!-- JavaScript -->
+  <!-- Main JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

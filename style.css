@@ -9,7 +9,7 @@
 body {
   font-family: 'League Spartan', sans-serif;
   background-color: #000;
-  color: #FFD700; /* Darker yellow (Gold) for all main text */
+  color: #FFD700; /* Darker yellow (Gold) */
   cursor: none;  /* We'll use a custom cursor on desktop */
 }
 
@@ -271,7 +271,7 @@ footer p {
 .education-subtitle {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #fff; /* White for subtitles to differentiate them slightly */
+  color: #fff; /* White to differentiate subtitle from main title */
   margin-bottom: 0.5rem;
 }
 .education-date {
