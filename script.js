@@ -18,7 +18,7 @@ document.querySelectorAll('nav a').forEach(link => {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      // Calculate the absolute top position of the target element and subtract the offset for the sticky navbar (80px)
+      // Calculate the absolute top position of the target element and subtract the sticky navbar offset (80px)
       const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({
         top: offsetTop,
@@ -39,10 +39,10 @@ document.addEventListener('mousemove', (e) => {
 document.querySelectorAll('nav a, .project-card').forEach(element => {
   element.addEventListener('mouseenter', () => {
     cursor.style.transform = 'scale(2)';
-    cursor.style.backgroundColor = 'rgba(255, 0, 0, 0.7)'; // Change cursor color to red on hover
+    cursor.style.backgroundColor = 'rgba(255,0,0,0.7)'; // Red on hover
   });
   element.addEventListener('mouseleave', () => {
     cursor.style.transform = 'scale(1)';
-    cursor.style.backgroundColor = 'rgba(255, 227, 0, 0.7)'; // Revert to default yellow
+    cursor.style.backgroundColor = 'rgba(255,237,102,0.7)'; // Revert to lighter yellow
   });
 });
