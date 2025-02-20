@@ -28,21 +28,32 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// Cursor Animation
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-});
-
-// Hover effect for interactive elements (nav links and project cards)
-document.querySelectorAll('nav a, .project-card').forEach(element => {
-  element.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'scale(2)';
-    cursor.style.backgroundColor = 'rgba(255,0,0,0.7)'; // Red on hover
+// Custom cursor initialization only for devices with a fine pointer (laptops/desktops)
+// If the device does not support a fine pointer, remove the cursor element
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const cursor = document.getElementById('cursor');
+  
+  // Cursor movement
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
   });
-  element.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'scale(1)';
-    cursor.style.backgroundColor = 'rgba(255,237,102,0.7)'; // Revert to lighter yellow
+  
+  // Hover effects on interactive elements
+  document.querySelectorAll('nav a, .project-card').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2)';
+      cursor.style.backgroundColor = 'rgba(255,0,0,0.7)'; // Red on hover
+    });
+    element.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      cursor.style.backgroundColor = 'rgba(255,227,0,0.7)'; // Mustard color
+    });
   });
-});
+} else {
+  // Remove the cursor element for devices with coarse pointers (phones/tablets)
+  const cursorElem = document.getElementById('cursor');
+  if (cursorElem) {
+    cursorElem.parentNode.removeChild(cursorElem);
+  }
+}

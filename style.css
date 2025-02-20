@@ -7,7 +7,7 @@
 body {
   font-family: 'League Spartan', sans-serif;
   background-color: #000;
-  color: #ffed66; /* Lighter yellow */
+  color: #ffe300; /* Mustard color */
   cursor: none;
 }
 
@@ -27,7 +27,7 @@ nav {
 }
 nav a {
   text-decoration: none;
-  color: #ffed66;
+  color: #ffe300;
   font-size: 1.1rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -70,7 +70,7 @@ footer p {
 /* About Me Section */
 .about-me {
   background-color: #000;
-  color: #ffed66;
+  color: #ffe300;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -102,7 +102,7 @@ footer p {
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #ffed66;
+  color: #ffe300;
   max-width: 900px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
@@ -119,7 +119,7 @@ footer p {
 /* Projects Section */
 .projects {
   background-color: #000;
-  color: #ffed66;
+  color: #ffe300;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -186,7 +186,7 @@ footer p {
 /* Experience Section */
 .experience {
   background-color: #000;
-  color: #ffed66;
+  color: #ffe300;
   padding: 4rem 2rem;
 }
 .experience .section-title {
@@ -215,13 +215,13 @@ footer p {
 .experience-subtitle {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffed66;
+  color: #ffe300;
   margin-bottom: 0.5rem;
 }
 .experience-date {
   font-size: 1rem;
   font-style: italic;
-  color: #ffed66;
+  color: #ffe300;
   margin-bottom: 1rem;
 }
 .experience-details {
@@ -238,7 +238,7 @@ footer p {
 /* Education Section */
 .education {
   background-color: #000;
-  color: #ffed66;
+  color: #ffe300;
   padding: 3rem 2rem;
   text-align: center;
 }
@@ -361,7 +361,7 @@ footer p {
 /* Contact Section */
 .contact {
   background-color: #000;
-  color: #ffed66;
+  color: #ffe300;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -390,20 +390,27 @@ footer p {
   filter: brightness(1.3);
 }
 
-/* Cursor Animation */
+/* Custom Cursor */
 .cursor {
   position: fixed;
   top: 0;
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: rgba(255,237,102,0.7); /* Lighter yellow */
+  background-color: rgba(255,227,0,0.7); /* Mustard color in RGBA */
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 15px rgba(255,237,102,0.7);
+  box-shadow: 0 0 15px rgba(255,227,0,0.7);
   transition: transform 0.1s ease, background-color 0.3s ease;
   z-index: 1000;
+}
+
+/* Hide custom cursor on devices with coarse pointers (phones/tablets) */
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
 }
 
 /* Media Queries */
