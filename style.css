@@ -1,451 +1,279 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sahil Mohapatra - Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600|Public+Sans:400,700|TT+Interphases:400,600" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 
-/* Body & Global Styles */
-body {
-  font-family: 'League Spartan', sans-serif;
-  background-color: #000;
-  color: #FFD700; /* Darker yellow (Gold) */
-  cursor: none;  /* We'll use a custom cursor on desktop */
-}
+  <!-- Smooth Scroll Polyfill (ensures smooth scrolling on older mobile browsers) -->
+  <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+  <script>
+    // Initialize the polyfill so all browsers support smooth scrolling
+    smoothscroll.polyfill();
+  </script>
+</head>
+<body>
+  <!-- Navigation Section -->
+  <nav>
+    <div class="nav-container">
+      <a href="#about">ABOUT ME</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#education">EDUCATION</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#hobbies">HOBBIES</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </nav>
 
-/* Navigation Bar */
-nav {
-  background-color: #000;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding: 1rem 0;
-}
-.nav-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-nav a {
-  text-decoration: none;
-  color: #FFD700; /* Same darker yellow */
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #fff;
-}
+  <!-- Video Section -->
+  <section class="main-content">
+    <div class="video-container">
+      <!-- For mobile autoplay compatibility -->
+      <video id="mainVideo" autoplay loop muted playsinline webkit-playsinline>
+        <source src="Final.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
 
-/* Video Section */
-.main-content {
-  width: 100%;
-  margin: 1rem 0;
-}
-.video-container {
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  <!-- Footer Section -->
+  <footer>
+    <h1>HI, I AM SAHIL MOHAPATRA</h1>
+    <p>ASPIRING SOFTWARE ENGINEER</p>
+  </footer>
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  font-weight: bold;
-}
-footer h1 {
-  font-size: 2rem;
-  color: #FFD700;
-}
-footer p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  color: #FFD700;
-}
+  <!-- About Me Section -->
+  <section id="about" class="about-me">
+    <h1>ABOUT ME</h1>
+    <div class="about-container">
+      <div class="image-container">
+        <img src="LSM.png" alt="Sahil Mohapatra" />
+      </div>
+      <div class="about-content">
+        <p>
+          <span class="highlight">HEY</span>, 
+          <span class="white-text">I'M SAHIL MOHAPATRA</span>, 
+          A COMPUTER SCIENCE UNDERGRADUATE AT 
+          <span class="highlight">BITS PILANI, DUBAI CAMPUS</span>. 
+          HERE, YOU CAN EXPLORE THE PROJECTS WORKED UPON.
+        </p>
+      </div>
+    </div>
+  </section>
 
-/* About Me Section */
-.about-me {
-  background-color: #000;
-  color: #FFD700;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.about-me h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 2rem;
-}
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  max-width: 90%;
-  margin: 0 auto;
-}
-.image-container {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #FFD700;
-}
-.image-container img {
-  width: 100%;
-  display: block;
-}
-.about-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #FFD700;
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: 'Open Sans', sans-serif;
-}
-.highlight {
-  color: #FFD700;
-  font-weight: bold;
-}
-.white-text {
-  color: #FFD700; /* Unified to the same darker yellow */
-  font-weight: bold;
-}
+  <!-- Projects Section -->
+<section id="projects" class="projects">
+  <h1 class="section-title">PROJECTS</h1>
+  <div class="project-container">
+    <!-- Project 1 -->
+    <div class="project-card" onclick="window.open('https://docs.google.com/document/d/1ZgIUqJRzu4uTnAMliEzVYcVqFHF9SekD6TYGWSeLKsw/edit?usp=sharing', '_blank')">
+      <img src="pic1.jpg" alt="Predictive Analytics for Social Media Virality" />
+      <div class="project-info">
+        <h2>Predictive Analytics for Social Media Virality</h2>
+        <p>A machine learning model to predict the virality of social media content using parameters like likes, shares, and comments.</p>
+      </div>
+    </div>
 
-/* Projects Section */
-.projects {
-  background-color: #000;
-  color: #FFD700;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.projects .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 2rem;
-}
-.project-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.project-card {
-  flex: 1 1 calc(30% - 2rem);
-  max-width: 350px;
-  min-width: 300px;
-  background-color: #FFD700; /* Card background in gold */
-  color: #000;              /* Black text on gold background */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 420px;
-}
-.project-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-.project-info {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  text-align: center;
-}
-.project-card h2 {
-  font-family: 'Public Sans', sans-serif;
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin-bottom: 0.3rem;
-}
-.project-card p {
-  font-family: 'TT Interphases', sans-serif;
-  font-size: 0.95rem;
-  margin: 0 auto;
-  padding: 0 0.3rem;
-}
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(255,215,0,0.7);
-}
+    <!-- Project 2 -->
+    <div class="project-card" onclick="window.open('https://docs.google.com/document/d/1OxSUn6kzZQrp4SINWmsR9h4UBN17jpzFsMR6OYCb4OI/edit?usp=sharing', '_blank')">
+      <img src="deepfake.webp" alt="DeepFake Detection System" />
+      <div class="project-info">
+        <h2>DeepFake Detection System</h2>
+        <p>Built a real-time detection system using lightweight ML to identify DeepFake content across video platforms using frame extraction.</p>
+      </div>
+    </div>
 
-/* Experience Section */
-.experience {
-  background-color: #000;
-  color: #FFD700;
-  padding: 4rem 2rem;
-}
-.experience .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.experience-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.experience-item {
-  text-align: left;
-}
-.experience-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 0.5rem;
-}
-.experience-subtitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 0.5rem;
-}
-.experience-date {
-  font-size: 1rem;
-  font-style: italic;
-  color: #FFD700;
-  margin-bottom: 1rem;
-}
-.experience-details {
-  list-style-type: disc;
-  margin-left: 2rem;
-}
-.experience-details li {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #fff; /* White stands out on black for bullet text */
-  margin-bottom: 1rem;
-}
+    <!-- Project 3 -->
+    <div class="project-card" onclick="window.open('https://docs.google.com/document/d/1FvZOP4VisAZzRbTosOILincI0f2QLdggq2puJyrIQAk/edit?usp=sharing', '_blank')">
+      <img src="Phishing.webp" alt="Email and URL Phishing Detection System" />
+      <div class="project-info">
+        <h2>Email and URL Phishing Detection System</h2>
+        <p>Developed a Naive Bayes classifier with TF-IDF to classify phishing emails and prevent malicious attacks via smart text analysis.</p>
+      </div>
+    </div>
 
-/* Education Section */
-.education {
-  background-color: #000;
-  color: #FFD700;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-.education .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 2rem;
-}
-.education-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  text-align: left;
-}
-.education-item {
-  padding: 1rem 0;
-}
-.education-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 0.5rem;
-}
-.education-subtitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff; /* White to differentiate subtitle from main title */
-  margin-bottom: 0.5rem;
-}
-.education-date {
-  font-size: 1rem;
-  font-style: italic;
-  color: #fff;
-}
+    <!-- Project 4 -->
+    <div class="project-card" onclick="window.open('https://wellnessai.netlify.app/', '_blank')">
+      <img src="chat1.jpg" alt="WellnessAI" />
+      <div class="project-info">
+        <h2>WellnessAI</h2>
+        <p>WellnessAI is an AI-powered chatbot designed for personalized fitness, nutrition, and mental wellness support.</p>
+      </div>
+    </div>
 
-/* Skills Section */
-.skills {
-  background-color: #000;
-  color: #fff;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.skills .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 1.5rem;
-}
-.skills-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: left;
-}
-.skill-item {
-  padding: 0.5rem 0;
-}
-.skill-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 0.3rem;
-}
-.normal-text {
-  color: #fff;
-}
-.highlight {
-  color: #FFD700;
-}
-.bold-text {
-  color: #fff;
-  font-weight: bold;
-}
-.skills ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-.skills li {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #fff;
-}
+    <!-- Project 5 -->
+    <div class="project-card" onclick="window.open('https://mosahil147.github.io/Online-Web-Music-Streaming-Platform/', '_blank')">
+      <img src="pic4.jpg" alt="Music Streaming Platform UI" />
+      <div class="project-info">
+        <h2>Music Streaming Platform UI (Spotify - Inspired)</h2>
+        <p>Designed a sleek and interactive UI for a music streaming platform with a visually appealing design.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* Hobbies Section */
-.hobbies {
-  background-color: #000;
-  color: #fff;
-  padding: 4rem 2rem;
-  text-align: left;
-}
-.hobbies .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-.hobbies-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.hobby-item {
-  padding: 0.5rem 0;
-}
-.hobby-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 0.3rem;
-}
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <h1 class="section-title">EXPERIENCE</h1>
+    <div class="experience-container">
+      <!-- Experience 1 -->
+      <div class="experience-item">
+        <h2 class="experience-title">FRONT-END DEVELOPMENT INTERN</h2>
+        <p class="experience-subtitle">SKOLAR EDTECH, BANGALORE (REMOTE)</p>
+        <p class="experience-date">JUNE 2024 – AUGUST 2024</p>
+        <ul class="experience-details">
+          <li>Developed responsive and visually appealing websites, including a photography website and a music streaming platform UI inspired by Spotify.</li>
+          <li>Enhanced user experience with intuitive navigation and interactive design elements.</li>
+          <li>Collaborated with cross-functional teams to deliver high-quality projects within tight deadlines.</li>
+        </ul>
+      </div>
 
-/* Contact Section */
-.contact {
-  background-color: #000;
-  color: #FFD700;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.contact .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
-  margin-bottom: 2rem;
-}
-.contact-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-.contact-icons a {
-  text-decoration: none;
-}
-.contact-icons .icon {
-  width: 60px;
-  height: 60px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-.contact-icons .icon:hover {
-  transform: scale(1.2);
-  filter: brightness(1.3);
-}
+      <!-- Experience 2 -->
+      <div class="experience-item">
+        <h2 class="experience-title">ACM HACKATHON 2022 - WINNER</h2>
+        <p class="experience-subtitle">BITS PILANI, DUBAI CAMPUS</p>
+        <p class="experience-date">OCTOBER 2022</p>
+        <ul class="experience-details">
+          <li>Worked on a team to develop an AI-powered video generation tool using text prompts, winning the prestigious ACM Hackathon.</li>
+          <li>Gained hands-on experience in rapid prototyping, problem-solving, and teamwork under time constraints.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-/* Custom Cursor */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255,215,0,0.7); /* #FFD700 in RGBA */
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 15px rgba(255,215,0,0.7);
-  transition: transform 0.1s ease, background-color 0.3s ease;
-  z-index: 1000;
-}
+  <!-- Education Section -->
+  <section id="education" class="education">
+    <h1 class="section-title">EDUCATION</h1>
+    <div class="education-container">
+      <!-- Education 1 -->
+      <div class="education-item">
+        <h2 class="education-title">BIRLA INSTITUTE OF TECHNOLOGY AND SCIENCE (BITS), PILANI - DUBAI CAMPUS</h2>
+        <p class="education-subtitle">BACHELOR OF ENGINEERING (B.E.) IN COMPUTER SCIENCE</p>
+        <p class="education-date">2022 – PRESENT</p>
+      </div>
+      <!-- Education 2 -->
+      <div class="education-item">
+        <h2 class="education-title">DAV PUBLIC SCHOOL, NAVI MUMBAI</h2>
+        <p class="education-subtitle">PRE-PRIMARY TO SENIOR SECONDARY EDUCATION</p>
+        <p class="education-date">2008 – 2022</p>
+      </div>
+    </div>
+  </section>
 
-/* Remove custom cursor on coarse pointers (phones/tablets) */
-@media (hover: none) and (pointer: coarse) {
-  .cursor {
-    display: none;
-  }
-}
+  <!-- Skills Section -->
+<section id="skills" class="skills">
+  <h1 class="section-title">SKILLS</h1>
+  <div class="skills-container">
+    <!-- Technical Skills -->
+    <div class="skill-item">
+      <h2 class="skill-title">TECHNICAL SKILLS:</h2>
+      <p class="skill-text">
+        <span class="highlight">Java</span> and <span class="highlight">Python</span>,
+        <span class="highlight">HTML</span>, <span class="highlight">CSS</span> and <span class="highlight">JavaScript</span>,
+        <span class="highlight">SQL (Basic)</span>,
+        <span class="highlight">TensorFlow</span>, <span class="highlight">PyTorch</span>, <span class="highlight">Scikit-learn</span> (Familiar)
+      </p>
+    </div>
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .video-container {
-    height: 300px;
-  }
-  nav a {
-    font-size: 1rem;
-  }
-  .project-card {
-    flex: 1 1 100%;
-  }
-  .project-card img {
-    height: 200px;
-  }
-}
-@media (max-width: 480px) {
-  .about-container {
-    width: 95%;
-  }
-  .image-container {
-    width: 200px;
-    height: 200px;
-  }
-  .about-content p {
-    font-size: 1rem;
-  }
-  .experience-title,
-  .education-title,
-  .skill-title,
-  .hobby-title {
-    font-size: 1.2rem;
-  }
-}
+    <!-- Data Analysis Tools -->
+    <div class="skill-item">
+      <h2 class="skill-title">DATA ANALYSIS TOOLS:</h2>
+      <p class="skill-text">
+        <span class="highlight">Microsoft Office</span>: well-versed in <span class="normal-text">Excel, Word, PowerPoint</span>
+      </p>
+    </div>
+
+    <!-- Laboratory Skills -->
+    <div class="skill-item">
+      <h2 class="skill-title">LABORATORY SKILLS:</h2>
+      <p class="skill-text">
+        <span class="normal-text">Machine Learning Model Training and Evaluation, Feature Engineering, Data Pipelines</span>
+      </p>
+    </div>
+
+    <!-- Language Skills -->
+    <div class="skill-item">
+      <h2 class="skill-title">LANGUAGES:</h2>
+      <p class="skill-text">
+        <span class="normal-text">English (Fluent) and Hindi (Fluent); Strong written and verbal communication with efficient reporting skills</span>
+      </p>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skill-item">
+      <h2 class="skill-title">SOFT SKILLS:</h2>
+      <p class="skill-text">
+        <span class="bold-text">Strong attention to detail, critical thinking, problem-solving, effective communication, and teamwork</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Hobbies Section -->
+<section id="hobbies" class="hobbies">
+  <h1 class="section-title">HOBBIES</h1>
+  <div class="hobbies-container">
+    <!-- Photography -->
+    <div class="hobby-item">
+      <h2 class="hobby-title">PHOTOGRAPHY:</h2>
+      <p class="skill-text">CAPTURING MOMENTS AND EXPERIMENTING WITH CREATIVE COMPOSITIONS, FINDING UNIQUE PERSPECTIVES TO TELL STORIES VISUALLY.</p>
+    </div>
+    <!-- Playing Piano -->
+    <div class="hobby-item">
+      <h2 class="hobby-title">PLAYING PIANO:</h2>
+      <p class="skill-text">EXPLORING MELODIES AND ENHANCING MUSICAL SKILLS WHILE EXPRESSING EMOTIONS AND IMPROVING FOCUS THROUGH MUSIC.</p>
+    </div>
+    <!-- Fitness Enthusiast -->
+    <div class="hobby-item">
+      <h2 class="hobby-title">FITNESS ENTHUSIAST:</h2>
+      <p class="skill-text">REGULAR GYM WORKOUTS AND A FOCUS ON MAINTAINING A HEALTHY LIFESTYLE, BUILDING BOTH PHYSICAL AND MENTAL STRENGTH.</p>
+    </div>
+    <!-- Tech Enthusiast -->
+    <div class="hobby-item">
+      <h2 class="hobby-title">TECH ENTHUSIAST:</h2>
+      <p class="skill-text">STAYING UPDATED WITH THE LATEST TRENDS AND INNOVATIONS IN TECHNOLOGY, EXPLORING TOOLS TO SOLVE REAL-WORLD PROBLEMS.</p>
+    </div>
+    <!-- Traveling -->
+    <div class="hobby-item">
+      <h2 class="hobby-title">TRAVELING:</h2>
+      <p class="skill-text">EXPLORING NEW PLACES AND CULTURES FOR INSPIRATION, GAINING UNIQUE EXPERIENCES, AND BROADENING MY PERSPECTIVE.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Information Section -->
+  <section id="contact" class="contact">
+    <h1 class="section-title">CONTACT INFORMATION</h1>
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/sahil-mohapatra-1a8157248/" target="_blank">
+        <img src="link.png" alt="LinkedIn Icon" class="icon" />
+      </a>
+      <a href="mailto:sahilxmohapatra@gmail.com">
+        <img src="mail.png" alt="Email Icon" class="icon" />
+      </a>
+      <a href="https://docs.google.com/document/d/1T1oLvfrBukFwf2zd6WN9Gi7FFvWgveWJqwB8CFeFYN8/edit?usp=sharing" target="_blank">
+        <img src="phone.png" alt="Phone Icon" class="icon" />
+      </a>
+      <a href="https://github.com/MoSahil147" target="_blank">
+        <img src="git.png" alt="GitHub Icon" class="icon" />
+      </a>
+      <a href="https://www.instagram.com/mosahil.14/" target="_blank">
+        <img src="insta.png" alt="Instagram Icon" class="icon" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Cursor (only on fine pointer devices) -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
