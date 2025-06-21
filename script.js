@@ -1,59 +1,44 @@
-// Video Pause/Resume on Scroll
+/* ---------- Pause/Play hero video on scroll ---------- */
 const video = document.getElementById('mainVideo');
-let videoPlaying = true;
-
+let playing = true;
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 100 && videoPlaying) {
-    video.pause();
-    videoPlaying = false;
-  } else if (window.scrollY <= 100 && !videoPlaying) {
-    video.play();
-    videoPlaying = true;
-  }
+  if (window.scrollY > 100 && playing) { video.pause(); playing = false; }
+  else if (window.scrollY <= 100 && !playing) { video.play(); playing = true; }
 });
 
-// Smooth Scroll for Navigation Links (with offset for sticky navbar)
-// The polyfill in index.html ensures this works on older mobile browsers
+/* ---------- Offset smooth-scroll for navbar ---------- */
 document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      // Calculate the top position of target minus 80px for navbar
-      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
   });
 });
 
-// Enable custom cursor only on devices with a fine pointer
+/* ---------- Custom cursor (desktop only) ---------- */
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   const cursor = document.getElementById('cursor');
-  
-  // Move cursor on mousemove
-  document.addEventListener('mousemove', (e) => {
+
+  document.addEventListener('mousemove', e => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
   });
-  
-  // Hover effects on interactive elements
-  document.querySelectorAll('nav a, .project-card').forEach(element => {
-    element.addEventListener('mouseenter', () => {
+
+  const hoverables = document.querySelectorAll('nav a, .project-card');
+  hoverables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'scale(2)';
-      cursor.style.backgroundColor = 'rgba(255,0,0,0.7)'; // Red on hover
+      cursor.style.backgroundColor = 'rgba(255,0,0,0.7)';
     });
-    element.addEventListener('mouseleave', () => {
+    el.addEventListener('mouseleave', () => {
       cursor.style.transform = 'scale(1)';
-      cursor.style.backgroundColor = 'rgba(255,215,0,0.7)'; // Return to #FFD700 (Gold) shade
+      cursor.style.backgroundColor = 'rgba(255,215,0,0.7)';
     });
   });
 } else {
-  // Remove the cursor element if device uses a coarse pointer (phone/tablet)
-  const cursorElem = document.getElementById('cursor');
-  if (cursorElem) {
-    cursorElem.remove();
-  }
+  /* remove cursor on touch devices */
+  const cur = document.getElementById('cursor');
+  if (cur) cur.remove();
 }

@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sahil Mohapatra - Portfolio</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahil Mohapatra – Portfolio</title>
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600|Public+Sans:400,700|TT+Interphases:400,600" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600|Public+Sans:400,700|TT+Interphases:400,600" rel="stylesheet" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Smooth Scroll Polyfill (ensures smooth scrolling on older mobile browsers) -->
+  <!-- Smooth-scroll polyfill for very old browsers -->
   <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
   <script>
-    // Initialize the polyfill so all browsers support smooth scrolling
+    /* Activate polyfill so every browser respects `scroll-behavior:smooth` */
     smoothscroll.polyfill();
   </script>
 </head>
+
 <body>
-  <!-- Navigation Section -->
+  <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <a href="#about">ABOUT ME</a>
@@ -32,24 +33,22 @@
     </div>
   </nav>
 
-  <!-- Video Section -->
+  <!-- Hero video -->
   <section class="main-content">
     <div class="video-container">
-      <!-- For mobile autoplay compatibility -->
-      <video id="mainVideo" autoplay loop muted playsinline webkit-playsinline>
+      <video id="mainVideo" autoplay loop muted playsinline>
         <source src="Final.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
   </section>
 
-  <!-- Footer Section -->
   <footer>
     <h1>HI, I AM SAHIL MOHAPATRA</h1>
     <p>ASPIRING SOFTWARE ENGINEER</p>
   </footer>
 
-  <!-- About Me Section -->
+  <!-- About -->
   <section id="about" class="about-me">
     <h1>ABOUT ME</h1>
     <div class="about-container">
@@ -58,222 +57,186 @@
       </div>
       <div class="about-content">
         <p>
-          <span class="highlight">HEY</span>, 
-          <span class="white-text">I'M SAHIL MOHAPATRA</span>, 
-          A COMPUTER SCIENCE UNDERGRADUATE AT 
-          <span class="highlight">BITS PILANI, DUBAI CAMPUS</span>. 
-          HERE, YOU CAN EXPLORE THE PROJECTS WORKED UPON.
+          <span class="highlight">HEY</span>,
+          <span class="white-text">I’M SAHIL MOHAPATRA</span>,
+          A COMPUTER SCIENCE UNDERGRADUATE AT
+          <span class="highlight">BITS PILANI, DUBAI CAMPUS</span>.
+          HERE, YOU CAN EXPLORE THE PROJECTS I’VE WORKED ON.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-<section id="projects" class="projects">
-  <h1 class="section-title">PROJECTS</h1>
-  <div class="project-container">
-    <!-- Project 1 -->
-    <div class="project-card" onclick="window.open('https://docs.google.com/document/d/1ZgIUqJRzu4uTnAMliEzVYcVqFHF9SekD6TYGWSeLKsw/edit?usp=sharing', '_blank')">
-      <img src="pic1.jpg" alt="Predictive Analytics for Social Media Virality" />
-      <div class="project-info">
-        <h2>Predictive Analytics for Social Media Virality</h2>
-        <p>A machine learning model to predict the virality of social media content using parameters like likes, shares, and comments.</p>
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h1 class="section-title">PROJECTS</h1>
+    <div class="project-container">
+      <!-- Project 1 – Social-Media Virality -->
+      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1e-LEXBmJL5-_vKvaBQE-VKBG87Z4mbT3/view', '_blank')">
+        <img src="pic1.jpg" alt="Predictive Analytics for Social Media Virality" />
+        <div class="project-info">
+          <h2>Predictive Analytics for Social Media Virality</h2>
+          <p>ML model predicting virality from likes, shares & comments.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 – DeepFake Detection -->
+      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1PRkNE3qlOpovJFm3jAKYrResLabOhds-/view', '_blank')">
+        <img src="DeepFake.webp" alt="DeepFake Detection System" />
+        <div class="project-info">
+          <h2>DeepFake Detection System</h2>
+          <p>Real-time detection across video platforms with frame extraction.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 – Phishing Detection -->
+      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1XWJFlRrZ2HkNMA9d7SmRvZEL1ebSg4-5/view?usp=share_link', '_blank')">
+        <img src="Phishing.webp" alt="Email & URL Phishing Detection" />
+        <div class="project-info">
+          <h2>Email and URL Phishing Detection</h2>
+          <p>Naive Bayes + TF-IDF to block malicious emails & links.</p>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card" onclick="window.open('https://wellnessai.netlify.app/', '_blank')">
+        <img src="chat1.jpg" alt="WellnessAI" />
+        <div class="project-info">
+          <h2>WellnessAI</h2>
+          <p>Chatbot for personalised fitness, nutrition & mental wellness.</p>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card" onclick="window.open('https://mosahil147.github.io/Online-Web-Music-Streaming-Platform/', '_blank')">
+        <img src="pic4.jpg" alt="Music Streaming Platform UI" />
+        <div class="project-info">
+          <h2>Music Streaming Platform UI</h2>
+          <p>Spotify-inspired responsive interface built from scratch.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Project 2 -->
-    <div class="project-card" onclick="window.open('https://docs.google.com/document/d/1OxSUn6kzZQrp4SINWmsR9h4UBN17jpzFsMR6OYCb4OI/edit?usp=sharing', '_blank')">
-      <img src="DeepFake.webp" alt="DeepFake Detection System" />
-      <div class="project-info">
-        <h2>DeepFake Detection System</h2>
-        <p>Built a real-time detection system using lightweight ML to identify DeepFake content across video platforms using frame extraction.</p>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card" onclick="window.open('https://docs.google.com/document/d/1FvZOP4VisAZzRbTosOILincI0f2QLdggq2puJyrIQAk/edit?usp=sharing', '_blank')">
-      <img src="Phishing.webp" alt="Email and URL Phishing Detection System" />
-      <div class="project-info">
-        <h2>Email and URL Phishing Detection System</h2>
-        <p>Developed a Naive Bayes classifier with TF-IDF to classify phishing emails and prevent malicious attacks via smart text analysis.</p>
-      </div>
-    </div>
-
-    <!-- Project 4 -->
-    <div class="project-card" onclick="window.open('https://wellnessai.netlify.app/', '_blank')">
-      <img src="chat1.jpg" alt="WellnessAI" />
-      <div class="project-info">
-        <h2>WellnessAI</h2>
-        <p>WellnessAI is an AI-powered chatbot designed for personalized fitness, nutrition, and mental wellness support.</p>
-      </div>
-    </div>
-
-    <!-- Project 5 -->
-    <div class="project-card" onclick="window.open('https://mosahil147.github.io/Online-Web-Music-Streaming-Platform/', '_blank')">
-      <img src="pic4.jpg" alt="Music Streaming Platform UI" />
-      <div class="project-info">
-        <h2>Music Streaming Platform UI (Spotify - Inspired)</h2>
-        <p>Designed a sleek and interactive UI for a music streaming platform with a visually appealing design.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Experience Section -->
+  <!-- Experience -->
   <section id="experience" class="experience">
     <h1 class="section-title">EXPERIENCE</h1>
     <div class="experience-container">
-      <!-- Experience 1 -->
       <div class="experience-item">
         <h2 class="experience-title">FRONT-END DEVELOPMENT INTERN</h2>
         <p class="experience-subtitle">SKOLAR EDTECH, BANGALORE (REMOTE)</p>
         <p class="experience-date">JUNE 2024 – AUGUST 2024</p>
         <ul class="experience-details">
-          <li>Developed responsive and visually appealing websites, including a photography website and a music streaming platform UI inspired by Spotify.</li>
-          <li>Enhanced user experience with intuitive navigation and interactive design elements.</li>
-          <li>Collaborated with cross-functional teams to deliver high-quality projects within tight deadlines.</li>
+          <li>Built responsive photography & music-streaming sites.</li>
+          <li>Enhanced UX with intuitive navigation & animations.</li>
+          <li>Delivered features on tight Agile sprints.</li>
         </ul>
       </div>
 
-      <!-- Experience 2 -->
       <div class="experience-item">
-        <h2 class="experience-title">ACM HACKATHON 2022 - WINNER</h2>
+        <h2 class="experience-title">ACM HACKATHON 2022 – WINNER</h2>
         <p class="experience-subtitle">BITS PILANI, DUBAI CAMPUS</p>
         <p class="experience-date">OCTOBER 2022</p>
         <ul class="experience-details">
-          <li>Worked on a team to develop an AI-powered video generation tool using text prompts, winning the prestigious ACM Hackathon.</li>
-          <li>Gained hands-on experience in rapid prototyping, problem-solving, and teamwork under time constraints.</li>
+          <li>Co-developed an AI text-to-video generation tool in 24 hrs.</li>
+          <li>Sharpened rapid prototyping & teamwork skills.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Education Section -->
+  <!-- Education -->
   <section id="education" class="education">
     <h1 class="section-title">EDUCATION</h1>
     <div class="education-container">
-      <!-- Education 1 -->
       <div class="education-item">
-        <h2 class="education-title">BIRLA INSTITUTE OF TECHNOLOGY AND SCIENCE (BITS), PILANI - DUBAI CAMPUS</h2>
-        <p class="education-subtitle">BACHELOR OF ENGINEERING (B.E.) IN COMPUTER SCIENCE</p>
-        <p class="education-date">2022 – PRESENT</p>
+        <h2 class="education-title">BITS PILANI – DUBAI CAMPUS</h2>
+        <p class="education-subtitle">B.E. Computer Science</p>
+        <p class="education-date">2022 – Present</p>
       </div>
-      <!-- Education 2 -->
       <div class="education-item">
         <h2 class="education-title">DAV PUBLIC SCHOOL, NAVI MUMBAI</h2>
-        <p class="education-subtitle">PRE-PRIMARY TO SENIOR SECONDARY EDUCATION</p>
+        <p class="education-subtitle">Pre-Primary → Sr. Secondary</p>
         <p class="education-date">2008 – 2022</p>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-<section id="skills" class="skills">
-  <h1 class="section-title">SKILLS</h1>
-  <div class="skills-container">
-    <!-- Technical Skills -->
-    <div class="skill-item">
-      <h2 class="skill-title">TECHNICAL SKILLS:</h2>
-      <p class="skill-text">
-        <span class="highlight">Java</span> and <span class="highlight">Python</span>,
-        <span class="highlight">HTML</span>, <span class="highlight">CSS</span> and <span class="highlight">JavaScript</span>,
-        <span class="highlight">SQL (Basic)</span>,
-        <span class="highlight">TensorFlow</span>, <span class="highlight">PyTorch</span>, <span class="highlight">Scikit-learn</span> (Familiar)
-      </p>
-    </div>
-
-    <!-- Data Analysis Tools -->
-    <div class="skill-item">
-      <h2 class="skill-title">DATA ANALYSIS TOOLS:</h2>
-      <p class="skill-text">
-        <span class="highlight">Microsoft Office</span>: well-versed in <span class="normal-text">Excel, Word, PowerPoint</span>
-      </p>
-    </div>
-
-    <!-- Laboratory Skills -->
-    <div class="skill-item">
-      <h2 class="skill-title">LABORATORY SKILLS:</h2>
-      <p class="skill-text">
-        <span class="normal-text">Machine Learning Model Training and Evaluation, Feature Engineering, Data Pipelines</span>
-      </p>
-    </div>
-
-    <!-- Language Skills -->
-    <div class="skill-item">
-      <h2 class="skill-title">LANGUAGES:</h2>
-      <p class="skill-text">
-        <span class="normal-text">English (Fluent) and Hindi (Fluent); Strong written and verbal communication with efficient reporting skills</span>
-      </p>
-    </div>
-
-    <!-- Soft Skills -->
-    <div class="skill-item">
-      <h2 class="skill-title">SOFT SKILLS:</h2>
-      <p class="skill-text">
-        <span class="bold-text">Strong attention to detail, critical thinking, problem-solving, effective communication, and teamwork</span>
-      </p>
-    </div>
-  </div>
-</section>
-
-  <!-- Hobbies Section -->
-<section id="hobbies" class="hobbies">
-  <h1 class="section-title">HOBBIES</h1>
-  <div class="hobbies-container">
-    <!-- Photography -->
-    <div class="hobby-item">
-      <h2 class="hobby-title">PHOTOGRAPHY:</h2>
-      <p class="skill-text">CAPTURING MOMENTS AND EXPERIMENTING WITH CREATIVE COMPOSITIONS, FINDING UNIQUE PERSPECTIVES TO TELL STORIES VISUALLY.</p>
-    </div>
-    <!-- Playing Piano -->
-    <div class="hobby-item">
-      <h2 class="hobby-title">PLAYING PIANO:</h2>
-      <p class="skill-text">EXPLORING MELODIES AND ENHANCING MUSICAL SKILLS WHILE EXPRESSING EMOTIONS AND IMPROVING FOCUS THROUGH MUSIC.</p>
-    </div>
-    <!-- Fitness Enthusiast -->
-    <div class="hobby-item">
-      <h2 class="hobby-title">FITNESS ENTHUSIAST:</h2>
-      <p class="skill-text">REGULAR GYM WORKOUTS AND A FOCUS ON MAINTAINING A HEALTHY LIFESTYLE, BUILDING BOTH PHYSICAL AND MENTAL STRENGTH.</p>
-    </div>
-    <!-- Tech Enthusiast -->
-    <div class="hobby-item">
-      <h2 class="hobby-title">TECH ENTHUSIAST:</h2>
-      <p class="skill-text">STAYING UPDATED WITH THE LATEST TRENDS AND INNOVATIONS IN TECHNOLOGY, EXPLORING TOOLS TO SOLVE REAL-WORLD PROBLEMS.</p>
-    </div>
-    <!-- Traveling -->
-    <div class="hobby-item">
-      <h2 class="hobby-title">TRAVELING:</h2>
-      <p class="skill-text">EXPLORING NEW PLACES AND CULTURES FOR INSPIRATION, GAINING UNIQUE EXPERIENCES, AND BROADENING MY PERSPECTIVE.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Contact Information Section -->
-  <section id="contact" class="contact">
-    <h1 class="section-title">CONTACT INFORMATION</h1>
-    <div class="contact-icons">
-      <a href="https://www.linkedin.com/in/sahil-mohapatra-1a8157248/" target="_blank">
-        <img src="link.png" alt="LinkedIn Icon" class="icon" />
-      </a>
-      <a href="mailto:sahilxmohapatra@gmail.com">
-        <img src="mail.png" alt="Email Icon" class="icon" />
-      </a>
-      <a href="https://docs.google.com/document/d/1T1oLvfrBukFwf2zd6WN9Gi7FFvWgveWJqwB8CFeFYN8/edit?usp=sharing" target="_blank">
-        <img src="phone.png" alt="Phone Icon" class="icon" />
-      </a>
-      <a href="https://github.com/MoSahil147" target="_blank">
-        <img src="git.png" alt="GitHub Icon" class="icon" />
-      </a>
-      <a href="https://www.instagram.com/mosahil.14/" target="_blank">
-        <img src="insta.png" alt="Instagram Icon" class="icon" />
-      </a>
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h1 class="section-title">SKILLS</h1>
+    <div class="skills-container">
+      <div class="skill-item">
+        <h2 class="skill-title">TECHNICAL SKILLS:</h2>
+        <p class="skill-text">
+          <span class="highlight">Java</span>, <span class="highlight">Python</span>,
+          <span class="highlight">HTML/CSS/JS</span>,
+          <span class="highlight">SQL</span> (basic),
+          TensorFlow, PyTorch, scikit-learn (familiar)
+        </p>
+      </div>
+      <div class="skill-item">
+        <h2 class="skill-title">DATA ANALYSIS TOOLS:</h2>
+        <p class="skill-text">Microsoft Office – Excel, Word, PowerPoint</p>
+      </div>
+      <div class="skill-item">
+        <h2 class="skill-title">LABORATORY SKILLS:</h2>
+        <p class="skill-text">Model training, evaluation & data pipelines</p>
+      </div>
+      <div class="skill-item">
+        <h2 class="skill-title">LANGUAGES:</h2>
+        <p class="skill-text">English & Hindi – fluent written and spoken</p>
+      </div>
+      <div class="skill-item">
+        <h2 class="skill-title">SOFT SKILLS:</h2>
+        <p class="skill-text">Detail-oriented, critical thinker & team player</p>
+      </div>
     </div>
   </section>
 
-  <!-- Cursor (only on fine pointer devices) -->
+  <!-- Hobbies -->
+  <section id="hobbies" class="hobbies">
+    <h1 class="section-title">HOBBIES</h1>
+    <div class="hobbies-container">
+      <div class="hobby-item">
+        <h2 class="hobby-title">PHOTOGRAPHY:</h2>
+        <p>Capturing stories through unique perspectives.</p>
+      </div>
+      <div class="hobby-item">
+        <h2 class="hobby-title">PIANO:</h2>
+        <p>Exploring melodies & enhancing focus through music.</p>
+      </div>
+      <div class="hobby-item">
+        <h2 class="hobby-title">FITNESS:</h2>
+        <p>Regular workouts for physical & mental strength.</p>
+      </div>
+      <div class="hobby-item">
+        <h2 class="hobby-title">TECH ENTHUSIAST:</h2>
+        <p>Experimenting with emerging tools & frameworks.</p>
+      </div>
+      <div class="hobby-item">
+        <h2 class="hobby-title">TRAVEL:</h2>
+        <p>Discovering cultures & broadening perspectives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h1 class="section-title">CONTACT</h1>
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/sahil-mohapatra-1a8157248/" target="_blank"><img class="icon" src="link.png" alt="LinkedIn" /></a>
+      <a href="mailto:sahilxmohapatra@gmail.com"><img class="icon" src="mail.png" alt="Email" /></a>
+      <a href="https://docs.google.com/document/d/1T1oLvfrBukFwf2zd6WN9Gi7FFvWgveWJqwB8CFeFYN8/edit?usp=sharing" target="_blank"><img class="icon" src="phone.png" alt="Resume" /></a>
+      <a href="https://github.com/MoSahil147" target="_blank"><img class="icon" src="git.png" alt="GitHub" /></a>
+      <a href="https://www.instagram.com/mosahil.14/" target="_blank"><img class="icon" src="insta.png" alt="Instagram" /></a>
+    </div>
+  </section>
+
+  <!-- Custom cursor element (desktop only) -->
   <div class="cursor" id="cursor"></div>
 
-  <!-- Main JavaScript -->
+  <!-- Main JS -->
   <script src="script.js"></script>
 </body>
 </html>
