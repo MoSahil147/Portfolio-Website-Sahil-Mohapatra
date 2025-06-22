@@ -1,4 +1,4 @@
-/* ---------- Pause/Play hero video on scroll ---------- */
+/* ---------- Pause/Play hero video ---------- */
 const video = document.getElementById('mainVideo');
 let playing = true;
 window.addEventListener('scroll', () => {
@@ -6,18 +6,18 @@ window.addEventListener('scroll', () => {
   else if (window.scrollY <= 100 && !playing) { video.play(); playing = true; }
 });
 
-/* ---------- Offset smooth-scroll for navbar ---------- */
+/* ---------- Smooth-scroll with navbar offset ---------- */
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
-    const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    const offset = target.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
   });
 });
 
-/* ---------- Custom cursor (desktop only) ---------- */
+/* ---------- Custom cursor (desktop) ---------- */
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   const cursor = document.getElementById('cursor');
 
@@ -38,7 +38,6 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
   });
 } else {
-  /* remove cursor on touch devices */
   const cur = document.getElementById('cursor');
   if (cur) cur.remove();
 }
