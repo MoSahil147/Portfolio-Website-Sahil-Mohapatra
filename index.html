@@ -1,242 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ---------- Basic Meta ---------- -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ---------- SEO / Social ---------- -->
   <title>Sahil Mohapatra – Portfolio</title>
+  <meta name="description"
+        content="Portfolio of Sahil Mohapatra – CS undergrad, AI/ML + full-stack projects, open to 6-month internships (Aug 2025–Jan 2026).">
+  <meta property="og:title" content="Sahil Mohapatra – Portfolio">
+  <meta property="og:description"
+        content="AI-driven projects • DeepFake Detection • Social Media Virality Predictor • Front-end & ML intern experience">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.com">
+  <meta property="og:image" content="assets/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600|Public+Sans:400,700|TT+Interphases:400,600" rel="stylesheet" />
+  <!-- ---------- Favicon ---------- -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- ---------- Google Fonts ---------- -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Smooth-scroll polyfill for very old browsers -->
-  <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
-  <script>
-    /* Activate polyfill so every browser respects `scroll-behavior:smooth` */
-    smoothscroll.polyfill();
-  </script>
+  <!-- ---------- Styles ---------- -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-      <a href="#about">ABOUT ME</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#experience">EXPERIENCE</a>
-      <a href="#education">EDUCATION</a>
-      <a href="#skills">SKILLS</a>
-      <a href="#hobbies">HOBBIES</a>
-      <a href="#contact">CONTACT</a>
-    </div>
-  </nav>
+  <!-- ────────────────── Header ────────────────── -->
+  <header id="top">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top">Sahil</a>
 
-  <!-- Hero video -->
-  <section class="main-content">
-    <div class="video-container">
-      <video id="mainVideo" autoplay loop muted playsinline>
-        <source src="Final.mp4" type="video/mp4" />
+      <!-- Hamburger toggle -->
+      <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="burger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Nav links -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+      <!-- Fallback poster shows instantly; video lazy-loads when in view -->
+      <video id="heroVideo"
+             playsinline muted loop preload="none"
+             poster="assets/hero-poster.jpg">
+        <source src="assets/hero-720p.mp4" type="video/mp4">
+        <!-- Browser fallback -->
         Your browser does not support the video tag.
       </video>
+      <div class="hero-text">
+        <h1>Hi, I’m <span>Sahil Mohapatra</span></h1>
+        <p>Aspiring <strong>AI / ML Engineer</strong> &amp; Full-Stack Developer</p>
+      </div>
     </div>
-  </section>
+  </header>
 
+  <!-- ────────────────── Main ────────────────── -->
+  <main>
+
+    <!-- About -->
+    <section id="about" class="section about">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <img src="assets/profile.jpg" alt="Portrait of Sahil Mohapatra" class="profile" loading="lazy">
+        <p>
+          I’m a third-year <b>Computer Science</b> student at <b>BITS Pilani, Dubai</b>
+          focusing on <b>AI/ML + DSA</b>. I build production-grade
+          projects—from a real-time <em>DeepFake Detector</em> to a
+          <em>Social-Media Virality Predictor</em>. Currently mastering Generative AI
+          while seeking a <b>6-month internship (Aug 2025 → Jan 2026)</b>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+      <h2>Projects</h2>
+      <div class="card-grid">
+
+        <!-- Project Card Template -->
+        <article class="card">
+          <img src="assets/virality.jpg"
+               alt="Screenshot of Social Media Virality Predictor"
+               loading="lazy">
+          <div class="card-body">
+            <h3>Social-Media Virality Predictor</h3>
+            <p>ML model forecasting reach using likes, shares &amp; comments.</p>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1e-LEXBmJL5-_vKvaBQE-VKBG87Z4mbT3/view" target="_blank" rel="noopener">Demo 🎥</a>
+              <a href="https://github.com/MoSahil147/social-virality" target="_blank" rel="noopener">Code 💻</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/deepfake.jpg"
+               alt="Frame sample from DeepFake Detection project"
+               loading="lazy">
+          <div class="card-body">
+            <h3>Real-time DeepFake Detection</h3>
+            <p>Lightweight MobileNetV2 + audio fusion on CPU in &lt;15 s.</p>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1PRkNE3qlOpovJFm3jAKYrResLabOhds-/view" target="_blank" rel="noopener">Demo 🎥</a>
+              <a href="https://github.com/MoSahil147/deepfake-detection" target="_blank" rel="noopener">Code 💻</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/phishing.jpg"
+               alt="UI of Phishing Detector"
+               loading="lazy">
+          <div class="card-body">
+            <h3>Email & URL Phishing Detector</h3>
+            <p>TF-IDF + Naïve Bayes to quarantine malicious content.</p>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1XWJFlRrZ2HkNMA9d7SmRvZEL1ebSg4-5/view" target="_blank" rel="noopener">Demo 🎥</a>
+              <a href="https://github.com/MoSahil147/phishing-detector" target="_blank" rel="noopener">Code 💻</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Front-End Development Intern <span>@ Skolar EdTech</span></h3>
+          <time>Jun 2024 – Aug 2024 (Remote)</time>
+          <ul>
+            <li>Built responsive photography & music-streaming sites.</li>
+            <li>Enhanced UX with animations; delivered in Agile sprints.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Winner – ACM Hackathon 2022</h3>
+          <time>Oct 2022</time>
+          <ul>
+            <li>Co-developed an AI text-to-video generator in 24 h.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li>
+          <strong>B.E. Computer Science</strong> – BITS Pilani, Dubai<br>
+          2022 – Present
+        </li>
+        <li>
+          <strong>DAV Public School, Navi Mumbai</strong><br>
+          2008 – 2022
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Languages & Frameworks</h3>
+          <p>Java · Python · HTML/CSS/JS · Flask · Streamlit</p>
+        </div>
+        <div>
+          <h3>ML / DL</h3>
+          <p>TensorFlow · PyTorch · scikit-learn · OpenCV · Librosa</p>
+        </div>
+        <div>
+          <h3>Data & Tools</h3>
+          <p>SQL · Git · Google Colab · VS Code</p>
+        </div>
+        <div>
+          <h3>Soft Skills</h3>
+          <p>Critical thinking · Teamwork · Agile</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies" class="section">
+      <h2>Hobbies</h2>
+      <ul class="hobby-list">
+        <li><b>Photography:</b> Capturing stories through lenses.</li>
+        <li><b>Piano:</b> Learning pieces like “Kaise Mujhe”.</li>
+        <li><b>Fitness:</b> Daily calisthenics & gym.</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <div class="icon-bar">
+        <a href="mailto:sahilxmohapatra@gmail.com" aria-label="Email">
+          <img src="assets/email.svg" alt="" width="36" height="36">
+        </a>
+        <a href="https://www.linkedin.com/in/sahil-mohapatra-1a8157248/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="assets/linkedin.svg" alt="" width="36" height="36">
+        </a>
+        <a href="https://github.com/MoSahil147" target="_blank" rel="noopener" aria-label="GitHub">
+          <img src="assets/github.svg" alt="" width="36" height="36">
+        </a>
+        <a href="https://docs.google.com/document/d/1T1oLvfrBukFwf2zd6WN9Gi7FFvWgveWJqwB8CFeFYN8" target="_blank" rel="noopener" aria-label="Resume PDF">
+          <img src="assets/resume.svg" alt="" width="36" height="36">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ────────────────── Footer ────────────────── -->
   <footer>
-    <h1>HI, I AM SAHIL MOHAPATRA</h1>
-    <p>ASPIRING SOFTWARE ENGINEER</p>
+    © 2025 Sahil Mohapatra
   </footer>
 
-  <!-- About -->
-  <section id="about" class="about-me">
-    <h1>ABOUT ME</h1>
-    <div class="about-container">
-      <div class="image-container">
-        <img src="LSM.png" alt="Sahil Mohapatra" />
-      </div>
-      <div class="about-content">
-        <p>
-          <span class="highlight">HEY</span>,
-          <span class="white-text">I’M SAHIL MOHAPATRA</span>,
-          A COMPUTER SCIENCE UNDERGRADUATE AT
-          <span class="highlight">BITS PILANI, DUBAI CAMPUS</span>.
-          HERE, YOU CAN EXPLORE THE PROJECTS I’VE WORKED ON.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <h1 class="section-title">PROJECTS</h1>
-    <div class="project-container">
-      <!-- Project 1 – Social-Media Virality -->
-      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1e-LEXBmJL5-_vKvaBQE-VKBG87Z4mbT3/view', '_blank')">
-        <img src="pic1.jpg" alt="Predictive Analytics for Social Media Virality" />
-        <div class="project-info">
-          <h2>Predictive Analytics for Social Media Virality</h2>
-          <p>ML model predicting virality from likes, shares & comments.</p>
-        </div>
-      </div>
-
-      <!-- Project 2 – DeepFake Detection -->
-      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1PRkNE3qlOpovJFm3jAKYrResLabOhds-/view', '_blank')">
-        <img src="DeepFake.webp" alt="DeepFake Detection System" />
-        <div class="project-info">
-          <h2>DeepFake Detection System</h2>
-          <p>Real-time detection across video platforms with frame extraction.</p>
-        </div>
-      </div>
-
-      <!-- Project 3 – Phishing Detection -->
-      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1XWJFlRrZ2HkNMA9d7SmRvZEL1ebSg4-5/view?usp=share_link', '_blank')">
-        <img src="Phishing.webp" alt="Email & URL Phishing Detection" />
-        <div class="project-info">
-          <h2>Email and URL Phishing Detection</h2>
-          <p>Naive Bayes + TF-IDF to block malicious emails & links.</p>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card" onclick="window.open('https://wellnessai.netlify.app/', '_blank')">
-        <img src="chat1.jpg" alt="WellnessAI" />
-        <div class="project-info">
-          <h2>WellnessAI</h2>
-          <p>Chatbot for personalised fitness, nutrition & mental wellness.</p>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="project-card" onclick="window.open('https://mosahil147.github.io/Online-Web-Music-Streaming-Platform/', '_blank')">
-        <img src="pic4.jpg" alt="Music Streaming Platform UI" />
-        <div class="project-info">
-          <h2>Music Streaming Platform UI</h2>
-          <p>Spotify-inspired responsive interface built from scratch.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="experience">
-    <h1 class="section-title">EXPERIENCE</h1>
-    <div class="experience-container">
-      <div class="experience-item">
-        <h2 class="experience-title">FRONT-END DEVELOPMENT INTERN</h2>
-        <p class="experience-subtitle">SKOLAR EDTECH, BANGALORE (REMOTE)</p>
-        <p class="experience-date">JUNE 2024 – AUGUST 2024</p>
-        <ul class="experience-details">
-          <li>Built responsive photography & music-streaming sites.</li>
-          <li>Enhanced UX with intuitive navigation & animations.</li>
-          <li>Delivered features on tight Agile sprints.</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <h2 class="experience-title">ACM HACKATHON 2022 – WINNER</h2>
-        <p class="experience-subtitle">BITS PILANI, DUBAI CAMPUS</p>
-        <p class="experience-date">OCTOBER 2022</p>
-        <ul class="experience-details">
-          <li>Co-developed an AI text-to-video generation tool in 24 hrs.</li>
-          <li>Sharpened rapid prototyping & teamwork skills.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="education">
-    <h1 class="section-title">EDUCATION</h1>
-    <div class="education-container">
-      <div class="education-item">
-        <h2 class="education-title">BITS PILANI – DUBAI CAMPUS</h2>
-        <p class="education-subtitle">B.E. Computer Science</p>
-        <p class="education-date">2022 – Present</p>
-      </div>
-      <div class="education-item">
-        <h2 class="education-title">DAV PUBLIC SCHOOL, NAVI MUMBAI</h2>
-        <p class="education-subtitle">Pre-Primary → Sr. Secondary</p>
-        <p class="education-date">2008 – 2022</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="skills">
-    <h1 class="section-title">SKILLS</h1>
-    <div class="skills-container">
-      <div class="skill-item">
-        <h2 class="skill-title">TECHNICAL SKILLS:</h2>
-        <p class="skill-text">
-          <span class="highlight">Java</span>, <span class="highlight">Python</span>,
-          <span class="highlight">HTML/CSS/JS</span>,
-          <span class="highlight">SQL</span> (basic),
-          TensorFlow, PyTorch, scikit-learn (familiar)
-        </p>
-      </div>
-      <div class="skill-item">
-        <h2 class="skill-title">DATA ANALYSIS TOOLS:</h2>
-        <p class="skill-text">Microsoft Office – Excel, Word, PowerPoint</p>
-      </div>
-      <div class="skill-item">
-        <h2 class="skill-title">LABORATORY SKILLS:</h2>
-        <p class="skill-text">Model training, evaluation & data pipelines</p>
-      </div>
-      <div class="skill-item">
-        <h2 class="skill-title">LANGUAGES:</h2>
-        <p class="skill-text">English & Hindi – fluent written and spoken</p>
-      </div>
-      <div class="skill-item">
-        <h2 class="skill-title">SOFT SKILLS:</h2>
-        <p class="skill-text">Detail-oriented, critical thinker & team player</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hobbies -->
-  <section id="hobbies" class="hobbies">
-    <h1 class="section-title">HOBBIES</h1>
-    <div class="hobbies-container">
-      <div class="hobby-item">
-        <h2 class="hobby-title">PHOTOGRAPHY:</h2>
-        <p>Capturing stories through unique perspectives.</p>
-      </div>
-      <div class="hobby-item">
-        <h2 class="hobby-title">PIANO:</h2>
-        <p>Exploring melodies & enhancing focus through music.</p>
-      </div>
-      <div class="hobby-item">
-        <h2 class="hobby-title">FITNESS:</h2>
-        <p>Regular workouts for physical & mental strength.</p>
-      </div>
-      <div class="hobby-item">
-        <h2 class="hobby-title">TECH ENTHUSIAST:</h2>
-        <p>Experimenting with emerging tools & frameworks.</p>
-      </div>
-      <div class="hobby-item">
-        <h2 class="hobby-title">TRAVEL:</h2>
-        <p>Discovering cultures & broadening perspectives.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h1 class="section-title">CONTACT</h1>
-    <div class="contact-icons">
-      <a href="https://www.linkedin.com/in/sahil-mohapatra-1a8157248/" target="_blank"><img class="icon" src="link.png" alt="LinkedIn" /></a>
-      <a href="mailto:sahilxmohapatra@gmail.com"><img class="icon" src="mail.png" alt="Email" /></a>
-      <a href="https://docs.google.com/document/d/1T1oLvfrBukFwf2zd6WN9Gi7FFvWgveWJqwB8CFeFYN8/edit?usp=sharing" target="_blank"><img class="icon" src="phone.png" alt="Resume" /></a>
-      <a href="https://github.com/MoSahil147" target="_blank"><img class="icon" src="git.png" alt="GitHub" /></a>
-      <a href="https://www.instagram.com/mosahil.14/" target="_blank"><img class="icon" src="insta.png" alt="Instagram" /></a>
-    </div>
-  </section>
-
-  <!-- Custom cursor element (desktop only) -->
-  <div class="cursor" id="cursor"></div>
-
-  <!-- Main JS -->
-  <script src="script.js"></script>
+  <!-- ---------- Scripts ---------- -->
+  <script src="script.js" defer></script>
 </body>
 </html>
