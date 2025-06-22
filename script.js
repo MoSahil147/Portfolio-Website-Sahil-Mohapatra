@@ -1,28 +1,44 @@
-/* ---------- Pause/Play hero video on visibility ---------- */
-const heroVideo = document.getElementById('heroVideo');
-if ('IntersectionObserver' in window && heroVideo) {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) heroVideo.play();
-        else heroVideo.pause();
-      });
-    },
-    { threshold: 0.25 }
-  );
-  observer.observe(heroVideo);
-}
+/* ---------- Pause/Play hero video on scroll ---------- */
+const video = document.getElementById('mainVideo');
+let playing = true;
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100 && playing) { video.pause(); playing = false; }
+  else if (window.scrollY <= 100 && !playing) { video.play(); playing = true; }
+});
 
-/* ---------- Smooth-scroll offset for fixed nav ---------- */
-document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+/* ---------- Offset smooth-scroll for navbar ---------- */
+document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
-    const yOffset = -70; // nav height offset
-    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-    // close mobile menu
-    document.getElementById('nav-toggle').checked = false;
+    const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
   });
 });
+
+/* ---------- Custom cursor (desktop only) ---------- */
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const cursor = document.getElementById('cursor');
+
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  });
+
+  const hoverables = document.querySelectorAll('nav a, .project-card');
+  hoverables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2)';
+      cursor.style.backgroundColor = 'rgba(255,0,0,0.7)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      cursor.style.backgroundColor = 'rgba(255,215,0,0.7)';
+    });
+  });
+} else {
+  /* remove cursor on touch devices */
+  const cur = document.getElementById('cursor');
+  if (cur) cur.remove();
+}
