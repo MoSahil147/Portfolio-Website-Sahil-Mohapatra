@@ -6,7 +6,7 @@
   <title>Sahil Mohapatra – Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600|Public+Sans:400,700|TT+Interphases:400,600" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600" rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -36,6 +36,7 @@
     <div class="video-container">
       <video id="mainVideo" autoplay loop muted playsinline>
         <source src="Final.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
     </div>
   </section>
@@ -55,8 +56,10 @@
       </div>
       <div class="about-content">
         <p>
-          <span class="highlight">HEY</span>, <span class="white-text">I’M SAHIL MOHAPATRA</span>,  
-          a COMPUTER SCIENCE UNDERGRADUATE AT <span class="highlight">BITS PILANI, DUBAI CAMPUS</span>.  
+          <span class="highlight">HEY</span>,
+          <span class="white-text">I’M SAHIL MOHAPATRA</span>,
+          A COMPUTER SCIENCE UNDERGRADUATE AT
+          <span class="highlight">BITS PILANI, DUBAI CAMPUS</span>.
           HERE, YOU CAN EXPLORE THE PROJECTS I’VE WORKED ON.
         </p>
       </div>
@@ -67,16 +70,45 @@
   <section id="projects" class="projects">
     <h1 class="section-title">PROJECTS</h1>
     <div class="project-container">
-      <!-- Example Project -->
       <div class="project-card" onclick="window.open('https://mosahil147.github.io/Predictive-Analysis-of-Social-Media/','_blank')">
-        <img src="pic1.jpg" alt="Predictive Analytics" />
+        <img src="pic1.jpg" alt="Predictive Analytics for Social Media Virality" />
         <div class="project-info">
           <h2>Predictive Analytics for Social Media Virality</h2>
           <p>ML model predicting virality from likes, shares & comments.</p>
         </div>
       </div>
 
-      <!-- Add your other projects here... -->
+      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1PRkNE3qlOpovJFm3jAKYrResLabOhds-/view','_blank')">
+        <img src="DeepFake.webp" alt="DeepFake Detection System" />
+        <div class="project-info">
+          <h2>DeepFake Detection System</h2>
+          <p>Real-time detection across video platforms with frame extraction.</p>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="window.open('https://drive.google.com/file/d/1XWJFlRrZ2HkNMA9d7SmRvZEL1ebSg4-5/view?usp=share_link','_blank')">
+        <img src="Phishing.webp" alt="Email & URL Phishing Detection" />
+        <div class="project-info">
+          <h2>Email and URL Phishing Detection</h2>
+          <p>Naive Bayes + TF-IDF to block malicious emails & links.</p>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="window.open('https://wellnessai.netlify.app/','_blank')">
+        <img src="chat1.jpg" alt="WellnessAI" />
+        <div class="project-info">
+          <h2>WellnessAI</h2>
+          <p>Chatbot for personalised fitness, nutrition & mental wellness.</p>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="window.open('https://mosahil147.github.io/Online-Web-Music-Streaming-Platform/','_blank')">
+        <img src="pic4.jpg" alt="Music Streaming Platform UI" />
+        <div class="project-info">
+          <h2>Music Streaming Platform UI</h2>
+          <p>Spotify-inspired responsive interface built from scratch.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -85,21 +117,22 @@
     <h1 class="section-title">EXPERIENCE</h1>
     <div class="experience-container">
       <div class="experience-item">
-        <h2 class="experience-title">AI/ML INTERN — ODeX Global Technologies, Dubai</h2>
-        <p class="experience-date">August 2025 – January 2026</p>
+        <h2 class="experience-title">BACKEND AI/ML INTERN</h2>
+        <p class="experience-subtitle">ODEX GLOBAL TECHNOLOGIES, DUBAI</p>
+        <p class="experience-date">AUGUST 2025 – JANUARY 2026</p>
         <ul class="experience-details">
-          <li>Working on a <span class="bold-text">Document Parsing System</span> to extract structured fields from <span class="bold-text">Bills of Lading</span>, integrating OCR pipelines and <span class="bold-text">fine-tuning ML models</span> for high-accuracy field detection and workflow automation.</li>
+          <li><span class="bold-text">Built a document-parsing system</span> for <span class="bold-text">Bills of Lading</span>; <span class="bold-text">integrated OCR</span> and <span class="bold-text">fine-tuned ML models</span> to automate high-accuracy field extraction.</li>
         </ul>
       </div>
 
       <div class="experience-item">
-        <h2 class="experience-title">FULL-STACK WEB DEVELOPMENT INTERN</h2>
+        <h2 class="experience-title">FRONT-END DEVELOPMENT INTERN</h2>
         <p class="experience-subtitle">SKOLAR EDTECH, BANGALORE (REMOTE)</p>
-        <p class="experience-date">June 2024 – August 2024</p>
+        <p class="experience-date">JUNE 2024 – AUGUST 2024</p>
         <ul class="experience-details">
-          <li>Built reusable front-end components with HTML/CSS, reducing development time by 20%.</li>
-          <li>Developed a Photography Portfolio and an Online Music-Streaming UI.</li>
-          <li>Collaborated in agile sprints under senior mentorship.</li>
+          <li>Built responsive photography & music-streaming sites.</li>
+          <li>Enhanced UX with intuitive navigation & animations.</li>
+          <li>Delivered features on tight Agile sprints.</li>
         </ul>
       </div>
     </div>
@@ -125,29 +158,35 @@
   <!-- Skills -->
   <section id="skills" class="skills">
     <h1 class="section-title">SKILLS</h1>
-    <div class="skills-container">
-      <div class="skill-item"><h2 class="skill-title">LANGUAGES</h2><p>Python, Java, HTML, CSS, JavaScript, SQL (Basic)</p></div>
-      <div class="skill-item"><h2 class="skill-title">FRAMEWORKS / TOOLS</h2><p>LangChain, HuggingFace, Ollama, FastAPI, Streamlit, scikit-learn, TensorFlow, PyTorch, FAISS, Chroma, Git, Google Suite, MS Office</p></div>
-      <div class="skill-item"><h2 class="skill-title">EXPERTISE</h2><p>RAG pipelines, model training, feature engineering, API development</p></div>
-      <div class="skill-item"><h2 class="skill-title">SOFT SKILLS</h2><p>Team collaboration, communication, critical thinking</p></div>
+    <div class="kv">
+      <p class="kv-line"><span class="kv-key">Languages:</span> <span class="kv-val">Python, Java, HTML, CSS, JavaScript, SQL (Basic)</span></p>
+      <p class="kv-line"><span class="kv-key">Frameworks/Tools:</span> <span class="kv-val">LangChain, HuggingFace, Ollama, FastAPI, Streamlit, scikit-learn, TensorFlow, PyTorch, FAISS, Chroma, Git, Google Suite, MS Office</span></p>
+      <p class="kv-line"><span class="kv-key">Expertise:</span> <span class="kv-val">RAG pipelines, model training, feature engineering, API development</span></p>
+      <p class="kv-line"><span class="kv-key">Soft Skills:</span> <span class="kv-val">Team collaboration, communication, critical thinking</span></p>
     </div>
   </section>
 
-  <!-- Certifications -->
+  <!-- Certification -->
   <section id="certifications" class="certifications">
     <h1 class="section-title">CERTIFICATION</h1>
-    <ul class="certs-list">
-      <li><a href="https://drive.google.com/file/d/1OitGpgxKXm4qlPYAd98g4haHA3x6K9o8/view" target="_blank">1st Place – ACM Hackathon 2022</a></li>
-      <li><a href="https://drive.google.com/file/d/18axOEu29u2TOBjNYgPMiss4hwiOG7tv4/view" target="_blank">Certified in Generative AI</a></li>
-      <li><a href="https://drive.google.com/file/d/1yRiUDSk_JBCkNAqEY0kGm3yCSOnMllxT/view" target="_blank">Certified in Artificial Intelligence (Intellipaat)</a></li>
-      <li><a href="https://drive.google.com/file/d/1qP6joTJgk7UWxTdQ8jVUQBwCYTT5eBFf/view" target="_blank">4th Place – ACMW Hackathon 2025</a></li>
-    </ul>
+    <div class="kv">
+      <p class="kv-line"><a class="kv-key kv-link" href="#">1st Place – ACM Hackathon 2022:</a> <span class="kv-val">Built an AI-powered text-to-video generation tool.</span></p>
+      <p class="kv-line"><a class="kv-key kv-link" href="#">Certified in Generative AI:</a> <span class="kv-val"> Hands-on training in LangChain & HuggingFace.</span></p>
+      <p class="kv-line"><a class="kv-key kv-link" href="#">Certified in Artificial Intelligence (Intellipaat):</a> <span class="kv-val">Completed practical ML/AI training.</span></p>
+      <p class="kv-line"><a class="kv-key kv-link" href="#">4th Place – ACMW Hackathon 2025:</a> <span class="kv-val">Built WellnessAI chatbot for mental health.</span></p>
+    </div>
   </section>
 
   <!-- Hobbies -->
   <section id="hobbies" class="hobbies">
     <h1 class="section-title">HOBBIES</h1>
-    <p>Photography, Piano, Fitness, Tech Enthusiast, Travel</p>
+    <div class="hobbies-container">
+      <div class="hobby-item"><h2 class="hobby-title">PHOTOGRAPHY:</h2><p>Capturing stories through unique perspectives.</p></div>
+      <div class="hobby-item"><h2 class="hobby-title">PIANO:</h2><p>Exploring melodies & enhancing focus through music.</p></div>
+      <div class="hobby-item"><h2 class="hobby-title">FITNESS:</h2><p>Regular workouts for physical & mental strength.</p></div>
+      <div class="hobby-item"><h2 class="hobby-title">TECH ENTHUSIAST:</h2><p>Experimenting with emerging tools & frameworks.</p></div>
+      <div class="hobby-item"><h2 class="hobby-title">TRAVEL:</h2><p>Discovering cultures & broadening perspectives.</p></div>
+    </div>
   </section>
 
   <!-- Contact -->
@@ -162,7 +201,9 @@
     </div>
   </section>
 
+  <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -26,6 +26,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     cursor.style.top = `${e.clientY}px`;
   });
 
+  // Include CV link for the hover effect
   const hoverables = document.querySelectorAll('nav a, .project-card, .cv-anchor');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => {
