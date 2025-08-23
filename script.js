@@ -26,7 +26,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     cursor.style.top = `${e.clientY}px`;
   });
 
-  const hoverables = document.querySelectorAll('nav a, .project-card');
+  const hoverables = document.querySelectorAll('nav a, .project-card, .cv-anchor');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'scale(2)';
