@@ -8,6 +8,12 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=League+Spartan:400,700|Open+Sans:400,600" rel="stylesheet" />
 
+  <!-- Site icon (shows in tab/header and when searching) -->
+  <link rel="icon" href="LSM.png" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="LSM.png" />
+  <meta property="og:image" content="LSM.png" />
+  <meta name="theme-color" content="#000000" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
@@ -200,6 +206,22 @@
       <a href="https://www.instagram.com/mosahil.14/" target="_blank"><img class="icon" src="insta.png" alt="Instagram" /></a>
     </div>
   </section>
+
+  <!-- Background audio -->
+  <audio id="bgAudio" preload="auto" muted>
+    <source src="The Weeknd Is There Someone Else Instrumental.mp4" type="audio/mp4" />
+  </audio>
+
+  <!-- Mute/Unmute button -->
+  <button id="audioToggle" class="audio-toggle" aria-label="Toggle sound">
+    <svg class="icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 10v4h4l5 4V6L7 10H3zM16 7c1.657 0 3 2.239 3 5s-1.343 5-3 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M19 4c2.6 1.6 4 4.3 4 8s-1.4 6.4-4 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+    </svg>
+    <svg class="icon-slash" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 21L21 3" fill="none" stroke="#ff3b30" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </button>
 
   <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>

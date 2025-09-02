@@ -46,6 +46,7 @@ section{width:100%}
 
 /* ---------- About ---------- */
 .about-me{background:#000;color:#FFD700;padding:4rem 2rem;text-align:center}
+.about-me h1{margin-bottom:1.25rem;} /* add space below ABOUT ME */
 .about-container{display:flex;flex-direction:column;align-items:center;gap:2rem;max-width:90%;margin:0 auto}
 .image-container{width:250px;height:250px;border-radius:50%;overflow:hidden;border:4px solid #FFD700;box-shadow:0 0 24px rgba(255,215,0,.2)}
 .image-container img{width:100%;height:100%;object-fit:cover}
@@ -90,7 +91,7 @@ section{width:100%}
 .education-subtitle{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.4rem}
 .education-date{font-size:1rem;font-style:italic;color:#fff;opacity:.9}
 
-/* ---------- Skills & Certification (white text matches Experience font) ---------- */
+/* ---------- Skills & Certification ---------- */
 .skills,.certifications{background:#000;padding:4rem 2rem}
 .kv{max-width:900px;margin:0 auto}
 .kv-line{font:600 1.1rem/1.8 'Open Sans',sans-serif;margin:.15rem 0}
@@ -122,6 +123,24 @@ section{width:100%}
   pointer-events:none;transform:translate(-50%,-50%);transition:transform .1s,background .3s;z-index:1000;
 }
 @media(hover:none) and (pointer:coarse){.cursor{display:none}}
+
+/* ---------- Audio toggle ---------- */
+.audio-toggle{
+  position:fixed;right:16px;bottom:16px;z-index:1100;
+  width:52px;height:52px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(0,0,0,.6);
+  border:1px solid rgba(255,215,0,.4);
+  color:#FFD700;cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,.5);
+  transition:transform .15s,box-shadow .2s,border-color .2s;
+}
+.audio-toggle:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.6);border-color:rgba(255,215,0,.8)}
+.icon-speaker{width:28px;height:28px}
+.icon-slash{
+  position:absolute;width:34px;height:34px;display:none;pointer-events:none;
+}
+.audio-toggle.muted .icon-slash{display:block}
 
 /* ---------- Responsive ---------- */
 @media(max-width:768px){
