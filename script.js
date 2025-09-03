@@ -38,14 +38,15 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   if (cur) cur.remove();
 }
 
-/* ---------- Background audio loop (0 → 1:53) ---------- */
+/* ---------- Background audio loop (0 → 1:53), start UNMUTED ---------- */
 const audio = document.getElementById('bgAudio');
 const toggleBtn = document.getElementById('audioToggle');
-const END_AT = 113; // seconds
-let userToggled = false;
+const END_AT = 55; // seconds
+let userMuted = false;
 
 function updateIcon() {
-  toggleBtn.classList.toggle('muted', audio.muted || audio.paused);
+  // Red slash only when actually muted
+  toggleBtn.classList.toggle('muted', audio.muted);
 }
 
 audio.addEventListener('timeupdate', () => {
@@ -56,28 +57,26 @@ audio.addEventListener('timeupdate', () => {
 });
 
 toggleBtn.addEventListener('click', () => {
-  userToggled = true;
   audio.muted = !audio.muted;
-  if (!audio.muted) audio.play().catch(()=>{});
-  else audio.pause();
+  userMuted = audio.muted;
+  if (!audio.muted && audio.paused) audio.play().catch(()=>{});
+  if (audio.muted && !audio.paused) audio.pause();
   updateIcon();
 });
 
-/* ---------- Enable audio after first interaction (autoplay policy) ---------- */
-function armAutoplayOnce() {
-  const kick = () => {
-    if (!userToggled) {
-      audio.muted = false;
-      audio.play().catch(()=>{});
-      updateIcon();
-    }
-    ['click','scroll','keydown','touchstart'].forEach(ev => window.removeEventListener(ev, kick));
-  };
-  ['click','scroll','keydown','touchstart'].forEach(ev => window.addEventListener(ev, kick));
+/* ---------- Try to play with sound immediately; fall back to first interaction ---------- */
+function kickAudioIfNeeded() {
+  if (!userMuted && (audio.paused || audio.currentTime === 0)) {
+    audio.muted = false;
+    audio.play().catch(()=>{});
+    updateIcon();
+  }
 }
-
 window.addEventListener('DOMContentLoaded', () => {
+  audio.muted = false;          // start with sound ON
+  audio.play().catch(()=>{});   // some browsers will block until interaction
   updateIcon();
-  armAutoplayOnce();
-  audio.play().catch(()=>{}); // starts muted until interaction
+});
+['click','scroll','keydown','touchstart'].forEach(ev => {
+  window.addEventListener(ev, kickAudioIfNeeded, { once: true });
 });
