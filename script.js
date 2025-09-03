@@ -41,7 +41,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 /* ---------- Background audio loop (0 → 1:53), start UNMUTED ---------- */
 const audio = document.getElementById('bgAudio');
 const toggleBtn = document.getElementById('audioToggle');
-const END_AT = 113; // 1 min 53 sec
+const END_AT = 55; //
 
 function updateIcon() {
   toggleBtn.classList.toggle('muted', audio.muted);
