@@ -41,14 +41,13 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 /* ---------- Background audio loop (0 → 1:53), start UNMUTED ---------- */
 const audio = document.getElementById('bgAudio');
 const toggleBtn = document.getElementById('audioToggle');
-const END_AT = 55; // seconds
-let userMuted = false;
+const END_AT = 113; // 1 min 53 sec
 
 function updateIcon() {
-  // Red slash only when actually muted
   toggleBtn.classList.toggle('muted', audio.muted);
 }
 
+// Loop only the first 1:53
 audio.addEventListener('timeupdate', () => {
   if (audio.currentTime >= END_AT) {
     audio.currentTime = 0;
@@ -56,27 +55,28 @@ audio.addEventListener('timeupdate', () => {
   }
 });
 
+// Mute/Unmute button
 toggleBtn.addEventListener('click', () => {
   audio.muted = !audio.muted;
-  userMuted = audio.muted;
   if (!audio.muted && audio.paused) audio.play().catch(()=>{});
   if (audio.muted && !audio.paused) audio.pause();
   updateIcon();
 });
 
-/* ---------- Try to play with sound immediately; fall back to first interaction ---------- */
-function kickAudioIfNeeded() {
-  if (!userMuted && (audio.paused || audio.currentTime === 0)) {
-    audio.muted = false;
-    audio.play().catch(()=>{});
-    updateIcon();
-  }
-}
-window.addEventListener('DOMContentLoaded', () => {
-  audio.muted = false;          // start with sound ON
-  audio.play().catch(()=>{});   // some browsers will block until interaction
+/* ---------- Start with sound; if blocked, start on first interaction ---------- */
+function startAudioWithSound() {
+  audio.muted = false;                // force sound ON
+  audio.play().catch(()=>{});         // if blocked, we'll try again on first gesture
   updateIcon();
-});
+}
+
+window.addEventListener('DOMContentLoaded', startAudioWithSound);
+
+// If autoplay-with-sound was blocked, kick it on first interaction
 ['click','scroll','keydown','touchstart'].forEach(ev => {
-  window.addEventListener(ev, kickAudioIfNeeded, { once: true });
+  window.addEventListener(ev, () => {
+    if (audio.paused || audio.currentTime === 0) {
+      startAudioWithSound();
+    }
+  }, { once: true });
 });
