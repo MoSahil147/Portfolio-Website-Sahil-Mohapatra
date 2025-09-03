@@ -41,13 +41,12 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 /* ---------- Background audio loop (0 → 1:53), start UNMUTED ---------- */
 const audio = document.getElementById('bgAudio');
 const toggleBtn = document.getElementById('audioToggle');
-const END_AT = 55; //
+const END_AT = 55; 
+let userMuted = false;
 
-function updateIcon() {
-  toggleBtn.classList.toggle('muted', audio.muted);
-}
+function updateIcon(){ toggleBtn.classList.toggle('muted', audio.muted); }
 
-// Loop only the first 1:53
+/* Keep only first 1:53 */
 audio.addEventListener('timeupdate', () => {
   if (audio.currentTime >= END_AT) {
     audio.currentTime = 0;
@@ -55,28 +54,52 @@ audio.addEventListener('timeupdate', () => {
   }
 });
 
-// Mute/Unmute button
+/* Mute/Unmute button (doesn't control play state) */
 toggleBtn.addEventListener('click', () => {
   audio.muted = !audio.muted;
-  if (!audio.muted && audio.paused) audio.play().catch(()=>{});
-  if (audio.muted && !audio.paused) audio.pause();
+  userMuted = audio.muted;
   updateIcon();
 });
 
-/* ---------- Start with sound; if blocked, start on first interaction ---------- */
-function startAudioWithSound() {
-  audio.muted = false;                // force sound ON
-  audio.play().catch(()=>{});         // if blocked, we'll try again on first gesture
+/* ---------- Autoplay with retries & gesture fallback ---------- */
+function startAudioNow(){
+  audio.autoplay = true;
+  audio.muted = false;
+  audio.play().catch(()=>{});
   updateIcon();
 }
 
-window.addEventListener('DOMContentLoaded', startAudioWithSound);
+/* Retry a few times in case the browser soft-blocks autoplay */
+let retries = 0;
+const maxRetries = 12; // ~12s total
+let retryTimer = null;
 
-// If autoplay-with-sound was blocked, kick it on first interaction
-['click','scroll','keydown','touchstart'].forEach(ev => {
-  window.addEventListener(ev, () => {
-    if (audio.paused || audio.currentTime === 0) {
-      startAudioWithSound();
+function ensureAudioIsPlaying(){
+  if (!userMuted && (audio.paused || audio.currentTime === 0)) {
+    startAudioNow();
+    retries++;
+    if (retries < maxRetries) {
+      retryTimer = setTimeout(ensureAudioIsPlaying, 1000);
     }
-  }, { once: true });
+  } else if (retryTimer) {
+    clearTimeout(retryTimer);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  startAudioNow();
+  ensureAudioIsPlaying();
+});
+
+/* Kick on first gesture if the browser required interaction */
+const kickEvents = ['click','keydown','touchstart','pointerdown','mousemove','wheel','scroll'];
+kickEvents.forEach(ev => {
+  window.addEventListener(ev, () => {
+    if (!userMuted && (audio.paused || audio.currentTime === 0)) startAudioNow();
+  }, { once: true, passive: true });
+});
+
+/* Also try again when tab becomes visible */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') ensureAudioIsPlaying();
 });
